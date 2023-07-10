@@ -1,7 +1,27 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+
+  const [ActiveLink, setActiveLink] = useState('');
+  const location = useLocation();
+
+  useEffect(() => {
+    // Get the active link from local storage
+    const storedActiveLink = localStorage.getItem('activeLink');
+
+    // Set the active link from local storage or the current location
+    setActiveLink(storedActiveLink || location.pathname);
+  }, [location]);
+
+  // Handle the click event of a menu item
+  const handleMenuItemClick = (link) => {
+    setActiveLink(link);
+
+    // Store the active link in local storage
+    localStorage.setItem('activeLink', link);
+  };
+
 
   return (
     <>
@@ -15,7 +35,9 @@ const Navbar = () => {
                 <div className="col-lg-2 col-md-3 col-6">
                   {/* Header Logo Start */}
                   <div className="header-logo">
-                    <Link to="/">
+                    <Link className={ActiveLink === '/' ? 'active' : ''} to="/"
+                      onClick={() => handleMenuItemClick('/')}
+                    >
                       <img
                         className="fit-image"
                         src="assets/images/logo/logo-black.png"
@@ -32,12 +54,16 @@ const Navbar = () => {
                     <nav className="main-menu main-menu-white">
                       <ul>
                         <li>
-                          <Link className="active" to="/about">
+                          <Link className={ActiveLink === '/about' ? 'active' : ''} to="/about"
+                            onClick={() => handleMenuItemClick('/about')}
+                          >
                             About
                           </Link>
                         </li>
-                        <li>
-                          <Link to="/panels">Panels</Link>
+                        <li className={ActiveLink === '/panels' ? 'active' : ''}>
+                          <Link className={ActiveLink === '/panels' ? 'active' : ''} to="/panels"
+                            onClick={() => handleMenuItemClick('/panels')}
+                          >Panels</Link>
                           <ul className="submenu">
                             <li>
                               <Link to="#">Q-Cells Panels</Link>
@@ -54,7 +80,9 @@ const Navbar = () => {
                           </ul>
                         </li>
                         <li>
-                          <Link to="#">Inverter</Link>
+                          <Link className={ActiveLink === '/inverter' ? 'active' : ''} to='/inverter'
+                            onClick={() => handleMenuItemClick('/inverter')}
+                          >Inverter</Link>
                           <ul className="submenu">
                             <li>
                               <Link to="#">Fronius </Link>
@@ -74,7 +102,9 @@ const Navbar = () => {
                           </ul>
                         </li>
                         <li>
-                          <Link to="#">Packages</Link>
+                          <Link className={ActiveLink === '/packages' ? 'active' : ''} to='/packages'
+                            onClick={() => handleMenuItemClick('/packages')}
+                          >Packages</Link>
                           <ul className="submenu">
                             <li>
                               <Link to="#">Residential</Link>
@@ -85,16 +115,24 @@ const Navbar = () => {
                           </ul>
                         </li>
                         <li>
-                          <Link to="#">Gallery</Link>
+                          <Link className={ActiveLink === '/gallary' ? 'active' : ''} to="/gallary"
+                            onClick={() => handleMenuItemClick('/gallary')}
+                          >Gallery</Link>
                         </li>
                         <li>
-                          <Link to="#">Finance Options</Link>
+                          <Link className={ActiveLink === '/finance' ? 'active' : ''} to="/finance"
+                            onClick={() => handleMenuItemClick('/finance')}
+                          >Finance Options</Link>
                         </li>
                         <li>
-                          <Link to="#">Contacts</Link>
+                          <Link className={ActiveLink === '/contact' ? 'active' : ''} to="/contact"
+                            onClick={() => handleMenuItemClick('/contact')}
+                          >Contacts</Link>
                         </li>
                         <li>
-                          <Link to="#">Consumer Guide</Link>
+                          <Link className={ActiveLink === '/consumer' ? 'active' : ''} to="/consumer"
+                            onClick={() => handleMenuItemClick('/consumer')}
+                          >Consumer Guide</Link>
                         </li>
                       </ul>
                     </nav>
