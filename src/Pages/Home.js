@@ -943,7 +943,7 @@ const Home = () => {
                               {/* Add more slides as needed */}
                             </div>
                           </div>
-                 
+
                         </div>
                       </div>
                     </div>

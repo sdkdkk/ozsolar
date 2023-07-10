@@ -4,6 +4,12 @@ import Home from "./Pages/Home";
 import Footer from "./Components/Footer";
 import About from "./Pages/About";
 import Panels from "./Pages/Panels";
+import Inverter from "./Pages/Inverter";
+import Packages from "./Pages/Packages";
+import Gallary from "./Pages/Gallary";
+import Finance from "./Pages/Finance";
+import Contact from "./Pages/Contact";
+import Consumer from "./Pages/Consumer";
 
 function App() {
   return (
@@ -13,8 +19,14 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/panels" element={<Panels />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/panels" element={<Panels />} />
+          <Route exact path="/inverter" element={<Inverter />} />
+          <Route exact path="/packages" element={<Packages />} />
+          <Route exact path="/gallary" element={<Gallary />} />
+          <Route exact path="/finance" element={<Finance />} />
+          <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="/consumer" element={<Consumer />} />
         </Routes>
       </Router>
     </div>

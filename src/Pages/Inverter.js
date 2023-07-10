@@ -1,21 +1,21 @@
 import React from "react";
-import Footer from "../Components/Footer";
 import ScrollToTop from "../Components/ScrollToTop";
+import Footer from "../Components/Footer";
 
-const Panels = () => {
+const Inverter = () => {
     return (
         <>
             {/* Project Banner Section Start */}
             <div
                 className="section about-banner-image"
-                style={{ backgroundImage: "url(assets/images/panel/banner.jpg)" }}
+                style={{ backgroundImage: "url(assets/images/inverter/banner.jpg)" }}
             >
                 <div className="container-fluid">
                     <div className="row">
                         <div className="content">
                             <div>
-                                <img className="panel-logo" src="assets/images/panel/q-celts.png" alt="" />
-                                <h1 className="title">Q-Cells Panels</h1>
+                                <img className="panel-logo" src="assets/images/inverter/logo.png" alt="" />
+                                <h1 className="title">Growatt</h1>
                                 <h5 className="text-white">
                                     Oz Solar Needs exist to happily serve our community
                                 </h5>
@@ -27,16 +27,19 @@ const Panels = () => {
                         <div className="messonry-button-w">
                             <div className="messonry-button">
                                 <a href="/" className="is-checked port-filter">
-                                    Q-Cells Panels
+                                    Growatt
                                 </a>
                                 <a href="/" className="port-filter">
-                                    Canadian Solar
+                                    Fronius
                                 </a>
                                 <a href="/" className="port-filter">
-                                    LG Panels
+                                    ABB
                                 </a>
                                 <a href="/" className="port-filter">
-                                    Jinko
+                                    SMA
+                                </a>
+                                <a href="/" className="port-filter">
+                                    Sungrow
                                 </a>
                             </div>
                         </div>
@@ -49,91 +52,58 @@ const Panels = () => {
 
 
 
-            {/* panel Section Start */}
+            {/* inverter Section Start */}
             <div className="section">
                 <div className="container-full">
                     <div className="row d-flex align-items-center">
                         <div className="col-lg-5">
-                            <img className="w-100" src="assets/images/panel/img01.jpg" alt="" />
+                            <img className="w-100" src="assets/images/inverter/img01.jpg" alt="" />
                         </div>
                         <div className="col-lg-7 panel-pd">
                             <div className="history-wrapper mb-10">
-                                <h1 className="title">Q-Cells Panels</h1>
+                                <h1 className="title">Growatt</h1>
                                 <div className="history-content">
                                     <p className="description">
-                                        Q CELLS IS THE GLOBAL NO.1 SOLAR CELL PRODUCER State-of-the-art
-                                        Manufacturing Execution System guaranteeing 100% traceability of
-                                        cells and modules, from procurement to logistics.
-                                        Fully-automated manufacturing facilities. On-site communication
-                                        system ensuring real-time communication with our manufacturing
-                                        sites and our R&amp;D centers.
+                                        Since its foundation in 2010, Growatt has established branch
+                                        offices one after another in Germany, US, UK, Australia, Brazil,
+                                        Thailand, India, Netherlands, etc in order to better serve the
+                                        customers across the globe. Growatt always sticks to the R&amp;D
+                                        investment and technology innovation and provides customers with
+                                        premium products and services through its core inverter
+                                        technology, rigorous quality control and continuous improvement
+                                        of customer service. By the end of 2019, Growatt has shipped
+                                        over 1.7 million inverters to over 100 countries and regions
+                                        across the globe. Growatt has been recognized as the No.1
+                                        Chinese Residential PV Inverter Brand, three years in a row
+                                        according to PVBL. By 2018 Growatt has become the TOP 3
+                                        single-phase inverter brand according to the IHS Markit’s world
+                                        inverter shipment ranking.
                                     </p>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-lg-6 col-md-6 col-sm-6 mb-10">
-                                    <div className="panel-box">
-                                        <div className="panel-icon">
-                                            <img src="assets/images/panel/icon01.png" alt="" />
-                                        </div>
-                                        <h3 className="panel-title">
-                                            Low Levelized Cost Of Electricity
-                                        </h3>
-                                        <p>
-                                            Higher Yield Per Surface Area And Lower Bos Costs And Higher
-                                            Power Classes And An Efficiency Rate Of Up To 17.4 %.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="col-lg-6 col-md-6 col-sm-6 mb-10">
-                                    <div className="panel-box">
-                                        <div className="panel-icon">
-                                            <img src="assets/images/panel/icon02.png" alt="" />
-                                        </div>
-                                        <h3 className="panel-title">
-                                            Innovative All-Weather Technology
-                                        </h3>
-                                        <p>
-                                            Optimal Yields, Whatever The Weather With Excellent Low-Light
-                                            And Temperature Behavior.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="col-lg-6 col-md-6 col-sm-6 mb-10">
-                                    <div className="panel-box">
-                                        <div className="panel-icon">
-                                            <img src="assets/images/panel/icon03.png" alt="" />
-                                        </div>
-                                        <h3 className="panel-title">Extreme Weather Rating</h3>
-                                        <p>
-                                            High-Tech Aluminum Alloy Frame, Certified For High Snow (5400
-                                            Pa) And Wind Loads (4000 Pa).
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="col-lg-6 col-md-6 col-sm-6 mb-10">
-                                    <div className="panel-box">
-                                        <div className="panel-icon">
-                                            <img src="assets/images/panel/icon04.png" alt="" />
-                                        </div>
-                                        <h3 className="panel-title">Maximum Cost Reductions</h3>
-                                        <p>
-                                            Lower Logistics Costs Due To Higher Module Capacity Per Box.
-                                        </p>
-                                    </div>
+                                    <p>
+                                        Growatt is a new energy enterprise dedicated to the R&amp;D and
+                                        manufacturing of PV inverters including on-grid, off-grid and
+                                        storage inverters, and user side smart energy management
+                                        solutions as well. The power capacity of Growatt on-grid
+                                        inverters ranges from 750W to 250 kW, meanwhile its off-grid and
+                                        storage inverters cover a power range from 1 kW to 630 kW.
+                                        Growatt inverters are extensively used worldwide for
+                                        applications in residential, commercial, PV poverty alleviation,
+                                        utility-scale scenarios as well as other storage power station
+                                        projects.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {/* panel Section End */}
+            {/* inverter Section End */}
 
 
 
 
 
-            {/* panel Section Start */}
+            {/* inverter Section Start */}
             <div className="section">
                 <div className="container-full">
                     <div className="row d-flex align-items-center">
@@ -206,12 +176,45 @@ const Panels = () => {
                             </div>
                         </div>
                         <div className="col-lg-5">
-                            <img className="w-100" src="assets/images/panel/img02.jpg" alt="" />
+                            <img className="w-100" src="assets/images/inverter/img02.jpg" alt="" />
                         </div>
                     </div>
                 </div>
             </div>
-            {/* panel Section End */}
+            {/* inverter Section End */}
+
+
+
+
+
+            <div className="section">
+                <div className="container-full">
+                    <div className="row d-flex align-items-center">
+                        <div className="col-lg-5">
+                            <img className="w-100" src="assets/images/inverter/img03.jpg" alt="" />
+                        </div>
+                        <div className="col-lg-7 panel-pd">
+                            <div className="history-wrapper mb-10">
+                                <h1 className="title">Features </h1>
+                                <div className="history-content">
+                                    <div className="Features">
+                                        <ul>
+                                            <li>Maximum efficiency 98.4%</li>
+                                            <li>Dual MPP trackers</li>
+                                            <li>Type II SPD on DC side</li>
+                                            <li>Supports export control</li>
+                                            <li>Touch key and OLED display</li>
+                                        </ul>
+                                        <p />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* inverter Section End */}
+            </div>
+
 
 
 
@@ -279,7 +282,6 @@ const Panels = () => {
                 </div>
             </div>
             {/* models Section End */}
-
 
 
 
@@ -356,4 +358,4 @@ const Panels = () => {
     );
 };
 
-export default Panels;
+export default Inverter;

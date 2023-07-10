@@ -1,7 +1,34 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+
+  const [ActiveLink, setActiveLink] = useState('');
+  const location = useLocation();
+
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const handleMobileMenuToggle = () => setMobileMenuOpen(!isMobileMenuOpen)
+
+  useEffect(() => {
+    const storedActiveLink = localStorage.getItem('activeLink');
+    setActiveLink(storedActiveLink || location.pathname);
+  }, [location]);
+
+  const handleMenuItemClick = (link) => {
+    setActiveLink(link);
+    localStorage.setItem('activeLink', link);
+  };
+
+  const [dropdownOpen, setDropdownOpen] = useState({
+    panels: false,
+    inverter: false,
+    packages: false
+  });
+
+  const handleDropdownToggle = () => {
+    setDropdownOpen(!dropdownOpen)
+  }
+
 
   return (
     <>
@@ -15,7 +42,9 @@ const Navbar = () => {
                 <div className="col-lg-2 col-md-3 col-6">
                   {/* Header Logo Start */}
                   <div className="header-logo">
-                    <Link to="/">
+                    <Link className={ActiveLink === '/' ? 'active' : ''} to="/"
+                      onClick={() => handleMenuItemClick('/')}
+                    >
                       <img
                         className="fit-image"
                         src="assets/images/logo/logo-black.png"
@@ -32,12 +61,16 @@ const Navbar = () => {
                     <nav className="main-menu main-menu-white">
                       <ul>
                         <li>
-                          <Link className="active" to="/about">
+                          <Link className={ActiveLink === '/about' ? 'active' : ''} to="/about"
+                            onClick={() => handleMenuItemClick('/about')}
+                          >
                             About
                           </Link>
                         </li>
-                        <li>
-                          <Link to="/panels">Panels</Link>
+                        <li className={ActiveLink === '/panels' ? 'active' : ''}>
+                          <Link className={ActiveLink === '/panels' ? 'active' : ''} to="/panels"
+                            onClick={() => handleMenuItemClick('/panels')}
+                          >Panels</Link>
                           <ul className="submenu">
                             <li>
                               <Link to="#">Q-Cells Panels</Link>
@@ -54,7 +87,9 @@ const Navbar = () => {
                           </ul>
                         </li>
                         <li>
-                          <Link to="#">Inverter</Link>
+                          <Link className={ActiveLink === '/inverter' ? 'active' : ''} to='/inverter'
+                            onClick={() => handleMenuItemClick('/inverter')}
+                          >Inverter</Link>
                           <ul className="submenu">
                             <li>
                               <Link to="#">Fronius </Link>
@@ -74,7 +109,9 @@ const Navbar = () => {
                           </ul>
                         </li>
                         <li>
-                          <Link to="#">Packages</Link>
+                          <Link className={ActiveLink === '/packages' ? 'active' : ''} to='/packages'
+                            onClick={() => handleMenuItemClick('/packages')}
+                          >Packages</Link>
                           <ul className="submenu">
                             <li>
                               <Link to="#">Residential</Link>
@@ -85,16 +122,24 @@ const Navbar = () => {
                           </ul>
                         </li>
                         <li>
-                          <Link to="#">Gallery</Link>
+                          <Link className={ActiveLink === '/gallary' ? 'active' : ''} to="/gallary"
+                            onClick={() => handleMenuItemClick('/gallary')}
+                          >Gallery</Link>
                         </li>
                         <li>
-                          <Link to="#">Finance Options</Link>
+                          <Link className={ActiveLink === '/finance' ? 'active' : ''} to="/finance"
+                            onClick={() => handleMenuItemClick('/finance')}
+                          >Finance Options</Link>
                         </li>
                         <li>
-                          <Link to="#">Contacts</Link>
+                          <Link className={ActiveLink === '/contact' ? 'active' : ''} to="/contact"
+                            onClick={() => handleMenuItemClick('/contact')}
+                          >Contacts</Link>
                         </li>
                         <li>
-                          <Link to="#">Consumer Guide</Link>
+                          <Link className={ActiveLink === '/consumer' ? 'active' : ''} to="/consumer"
+                            onClick={() => handleMenuItemClick('/consumer')}
+                          >Consumer Guide</Link>
                         </li>
                       </ul>
                     </nav>
@@ -108,7 +153,7 @@ const Navbar = () => {
                   </div>
                   {/* Mobile Menu Hamburger Start */}
                   <div className="mobile-menu-hamburger mobile-menu-hamburger-white d-md-block d-lg-none">
-                    <Link to="javascript:void(0)">
+                    <Link to="#" onClick={handleMobileMenuToggle}>
                       <span>Menu</span>
                       <i className="icon ion-android-menu" />
                     </Link>
@@ -121,7 +166,7 @@ const Navbar = () => {
         </div>
         {/* Header Top End */}
         {/* Mobile Menu Start */}
-        <div className="mobile-menu-wrapper">
+        <div className={`mobile-menu-wrapper ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="offcanvas-overlay" />
           {/* Mobile Menu Inner Start */}
           <div className="mobile-menu-inner">
@@ -133,7 +178,7 @@ const Navbar = () => {
               </div>
               {/* Mobile Menu Logo End */}
               {/* Button Close Start */}
-              <div className="offcanvas-btn-close">
+              <div className="offcanvas-btn-close" onClick={handleMobileMenuToggle}>
                 <i className="icofont-close-line" />
               </div>
               {/* Button Close End */}
@@ -144,10 +189,10 @@ const Navbar = () => {
               <nav>
                 <ul className="mobile-menu">
                   <li className="has-children">
-                    <Link to="#">About</Link>
+                    <Link to="/about">About</Link>
                   </li>
                   <li className="has-children">
-                    <Link to="#">
+                    <Link to="/panels">
                       Panels{" "}
                       <i className="icofont-rounded-down" aria-hidden="true" />
                     </Link>
@@ -167,7 +212,7 @@ const Navbar = () => {
                     </ul>
                   </li>
                   <li className="has-children">
-                    <Link to="#">
+                    <Link to="/inverter" onClick={() => handleDropdownToggle('inverter')}>
                       Inverter{" "}
                       <i className="icofont-rounded-down" aria-hidden="true" />
                     </Link>
@@ -190,7 +235,7 @@ const Navbar = () => {
                     </ul>
                   </li>
                   <li className="has-children">
-                    <Link to="#">
+                    <Link to="/packages">
                       Packages{" "}
                       <i className="icofont-rounded-down" aria-hidden="true" />
                     </Link>
@@ -204,16 +249,16 @@ const Navbar = () => {
                     </ul>
                   </li>
                   <li>
-                    <Link to="#">Gallery</Link>
+                    <Link to="/gallary">Gallery</Link>
                   </li>
                   <li>
-                    <Link to="#">Finance Options</Link>
+                    <Link to="/finance">Finance Options</Link>
                   </li>
                   <li>
-                    <Link to="#">Contacts</Link>
+                    <Link to="/contact">Contacts</Link>
                   </li>
                   <li>
-                    <Link to="#">Consumer Guide</Link>
+                    <Link to="/consumer">Consumer Guide</Link>
                   </li>
                 </ul>
               </nav>
