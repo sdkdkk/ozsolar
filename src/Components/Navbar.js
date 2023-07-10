@@ -37,7 +37,7 @@ const Navbar = () => {
                           </Link>
                         </li>
                         <li>
-                          <Link to="#">Panels</Link>
+                          <Link to="/panels">Panels</Link>
                           <ul className="submenu">
                             <li>
                               <Link to="#">Q-Cells Panels</Link>
