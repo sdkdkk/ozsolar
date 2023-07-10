@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
+import Odometer from "react-odometerjs";
+import "odometer/themes/odometer-theme-default.css";
+import "odometer/themes/odometer-theme-default.css";
 
 const About = () => {
+  const [odometerValue, setOdometerValue] = useState(0);
+  const [odometerValue1, setOdometerValue1] = useState();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setOdometerValue(11);
+      setOdometerValue1(45000);
+    }, 1000);
+  }, []);
+
   return (
     <>
       <div className=" disabled-onepage-scroll">
@@ -24,9 +37,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        {/* Project Banner Section End */}
         {/* about Section Start */}
-
         <div className="section section-padding-top section-padding-bottom">
           <div className="container">
             <div className="row mb-n10">
@@ -63,10 +74,8 @@ const About = () => {
             </div>
           </div>
         </div>
-
         {/* about Section End */}
         {/* Work Section Start */}
-
         <div className="section work-image-bg">
           <div className="container">
             <div className="row">
@@ -93,7 +102,13 @@ const About = () => {
                         <img src="assets/images/about/abouticon1.svg" alt="" />
                       </div>
                       <h3 className="f-700">
-                        <span className="odometer" data-count-to={11} />+ Years
+                        <span className="odometer" />
+                        <Odometer
+                          value={odometerValue}
+                          format="(.ddd),dd"
+                          theme="default"
+                        />
+                        + Years
                       </h3>
                       <p>of Experience &amp; Record</p>
                     </div>
@@ -104,7 +119,13 @@ const About = () => {
                         <img src="assets/images/about/abouticon2.svg" alt="" />
                       </div>
                       <h3 className="f-700">
-                        <span className="odometer" data-count-to={45000} />+
+                        <span className="odometer"/>
+                        <Odometer
+                          value={odometerValue1}
+                          format="(,ddd),dd"
+                          theme="default"
+                        />
+                        +
                       </h3>
                       <p>Solar panels Installed</p>
                     </div>
@@ -132,10 +153,8 @@ const About = () => {
             </div>
           </div>
         </div>
-
         {/* Work Section End */}
         {/* Services Section Start */}
-
         <div className="section section-padding-top section-padding-bottom bg-dark">
           <div className="container">
             <div className="row">
@@ -228,7 +247,6 @@ const About = () => {
             </div>
           </div>
         </div>
-
         {/* Services Section End */}
         {/* Customer’s review Section Start */}
         <div className="section section-padding-top section-padding-bottom">
@@ -434,7 +452,7 @@ const About = () => {
           </div>
           <Link href="#"></Link>
         </div>
-<Footer/>
+        <Footer />
         {/* End Main Footer */}
         {/* Scroll Top Start */}
         <Link href="#" className="scroll-top" id="scroll-top">
