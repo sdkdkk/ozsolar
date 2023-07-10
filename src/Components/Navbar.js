@@ -7,7 +7,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const handleMobileMenuToggle = () => setMobileMenuOpen(!isMobileMenuOpen)
+  const handleMobileMenuToggle = () => setMobileMenuOpen(!isMobileMenuOpen);
 
   useEffect(() => {
     const storedActiveLink = localStorage.getItem('activeLink');
@@ -25,9 +25,9 @@ const Navbar = () => {
     packages: false
   });
 
-  const handleDropdownToggle = () => {
-    setDropdownOpen(!dropdownOpen)
-  }
+  const handleDropdownToggle = () => setDropdownOpen(!dropdownOpen);
+
+
 
 
   return (
