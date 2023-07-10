@@ -5,6 +5,7 @@ import Odometer from "react-odometerjs";
 import "odometer/themes/odometer-theme-default.css";
 import "odometer/themes/odometer-theme-default.css";
 
+
 const About = () => {
   const [odometerValue, setOdometerValue] = useState(0);
   const [odometerValue1, setOdometerValue1] = useState();
@@ -15,6 +16,8 @@ const About = () => {
       setOdometerValue1(45000);
     }, 1000);
   }, []);
+
+
 
   return (
     <>
@@ -119,7 +122,7 @@ const About = () => {
                         <img src="assets/images/about/abouticon2.svg" alt="" />
                       </div>
                       <h3 className="f-700">
-                        <span className="odometer"/>
+                        <span className="odometer" />
                         <Odometer
                           value={odometerValue1}
                           format="(,ddd),dd"
@@ -284,173 +287,29 @@ const About = () => {
                             </p>
                             {/* Name Start */}
                             <h6 className="name">
-                              <Link href="#">
+                              <a href="#">
                                 Ken and Dionesia Goebel | Laidley Heights
-                              </Link>
+                              </a>
                             </h6>
-                            <Link href="#"></Link>
                           </div>
-                          <Link href="#">{/* Client Content End */}</Link>
+                          {/* Client Content End */}
                         </div>
-                        <Link href="#">{/* Single Client End */}</Link>
+                        {/* Single Client End */}
                       </div>
-                      <Link href="#"></Link>
-                      <div className="swiper-slide">
-                        <Link href="#">{/* Single Client Start */}</Link>
-                        <div className="single-client-wrapper">
-                          <Link href="#">
-                            {/* Client Thumb Icon Start */}
-                            <div className="client-thumb-icon">
-                              <div className="thumb">
-                                <img
-                                  src="assets/images/home/review.png"
-                                  alt=""
-                                />
-                              </div>
-                            </div>
-                            {/* Client Thumb Icon End */}
-                            {/* Client Content Start */}
-                          </Link>
-                          <div className="client-content">
-                            <Link href="#">
-                              {/* Name End */}
-                              <p>
-                                We, the Hooper Taxation Services Pty Ltd, (Ken
-                                and Dionesia Goebel) would like to thank you “Oz
-                                Solar Needs” for your unbelievable,
-                                professional, honest, friendly and reliable
-                                service. You did an amazing job for our business
-                                and residential. What admire and amaze us the
-                                most is Jimmy’s unconditional helping hand and
-                                friendly advices.
-                              </p>
-                              {/* Name Start */}
-                            </Link>
-                            <h6 className="name">
-                              <Link href="#"></Link>
-                              <Link href="#">
-                                Ken and Dionesia Goebel | Laidley Heights
-                              </Link>
-                            </h6>
-                            <Link href="#"></Link>
-                          </div>
-                          <Link href="#">{/* Client Content End */}</Link>
-                        </div>
-                        <Link href="#">{/* Single Client End */}</Link>
-                      </div>
-                      <Link href="#"></Link>
-                      <div className="swiper-slide">
-                        <Link href="#">{/* Single Client Start */}</Link>
-                        <div className="single-client-wrapper">
-                          <Link href="#">
-                            {/* Client Thumb Icon Start */}
-                            <div className="client-thumb-icon">
-                              <div className="thumb">
-                                <img
-                                  src="assets/images/home/review.png"
-                                  alt=""
-                                />
-                              </div>
-                            </div>
-                            {/* Client Thumb Icon End */}
-                            {/* Client Content Start */}
-                          </Link>
-                          <div className="client-content">
-                            <Link href="#">
-                              {/* Name End */}
-                              <p>
-                                We, the Hooper Taxation Services Pty Ltd, (Ken
-                                and Dionesia Goebel) would like to thank you “Oz
-                                Solar Needs” for your unbelievable,
-                                professional, honest, friendly and reliable
-                                service. You did an amazing job for our business
-                                and residential. What admire and amaze us the
-                                most is Jimmy’s unconditional helping hand and
-                                friendly advices.
-                              </p>
-                              {/* Name Start */}
-                            </Link>
-                            <h6 className="name">
-                              <Link href="#"></Link>
-                              <Link href="#">
-                                Ken and Dionesia Goebel | Laidley Heights
-                              </Link>
-                            </h6>
-                            <Link href="#"></Link>
-                          </div>
-                          <Link href="#">{/* Client Content End */}</Link>
-                        </div>
-                        <Link href="#">{/* Single Client End */}</Link>
-                      </div>
-                      <Link href="#"></Link>
-                      <div className="swiper-slide">
-                        <Link href="#">{/* Single Client Start */}</Link>
-                        <div className="single-client-wrapper">
-                          <Link href="#">
-                            {/* Client Thumb Icon Start */}
-                            <div className="client-thumb-icon">
-                              <div className="thumb">
-                                <img
-                                  src="assets/images/home/review.png"
-                                  alt=""
-                                />
-                              </div>
-                            </div>
-                            {/* Client Thumb Icon End */}
-                            {/* Client Content Start */}
-                          </Link>
-                          <div className="client-content">
-                            <Link href="#">
-                              {/* Name End */}
-                              <p>
-                                We, the Hooper Taxation Services Pty Ltd, (Ken
-                                and Dionesia Goebel) would like to thank you “Oz
-                                Solar Needs” for your unbelievable,
-                                professional, honest, friendly and reliable
-                                service. You did an amazing job for our business
-                                and residential. What admire and amaze us the
-                                most is Jimmy’s unconditional helping hand and
-                                friendly advices.
-                              </p>
-                              {/* Name Start */}
-                            </Link>
-                            <h6 className="name">
-                              <Link href="#"></Link>
-                              <Link href="#">
-                                Ken and Dionesia Goebel | Laidley Heights
-                              </Link>
-                            </h6>
-                            <Link href="#"></Link>
-                          </div>
-                          <Link href="#">{/* Client Content End */}</Link>
-                        </div>
-                        <Link href="#">{/* Single Client End */}</Link>
-                      </div>
-                      <Link href="#"></Link>
+                      {/* Add more swiper-slide elements for additional testimonials */}
                     </div>
-                    <Link href="#"></Link>
-                  </div>
-                  <Link href="#">
-                    {/* Swiper Pagination Start */}
                     <div className="swiper-pagination d-none" />
-                    {/* Swiper Pagination End */}
-                    {/* Swiper Navigation Start */}
                     <div className="client-crousel-prev swiper-button-prev">
                       <i className="ion-ios-arrow-thin-left" />
                     </div>
                     <div className="client-crousel-next swiper-button-next">
                       <i className="ion-ios-arrow-thin-right" />
                     </div>
-                    {/* Swiper Navigation End */}
-                  </Link>
+                  </div>
                 </div>
-                <Link href="#"></Link>
               </div>
-              <Link href="#"></Link>
             </div>
-            <Link href="#"></Link>
           </div>
-          <Link href="#"></Link>
         </div>
         <Footer />
         {/* End Main Footer */}
