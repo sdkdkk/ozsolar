@@ -26,16 +26,16 @@ const Panels = () => {
                     <div className="row mt-n2">
                         <div className="messonry-button-w">
                             <div className="messonry-button">
-                                <a href="index.html" className="is-checked port-filter">
+                                <a href="/" className="is-checked port-filter">
                                     Q-Cells Panels
                                 </a>
-                                <a href="index.html" className="port-filter">
+                                <a href="/" className="port-filter">
                                     Canadian Solar
                                 </a>
-                                <a href="index.html" className="port-filter">
+                                <a href="/" className="port-filter">
                                     LG Panels
                                 </a>
-                                <a href="index.html" className="port-filter">
+                                <a href="/" className="port-filter">
                                     Jinko
                                 </a>
                             </div>

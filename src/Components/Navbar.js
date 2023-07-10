@@ -6,21 +6,28 @@ const Navbar = () => {
   const [ActiveLink, setActiveLink] = useState('');
   const location = useLocation();
 
-  useEffect(() => {
-    // Get the active link from local storage
-    const storedActiveLink = localStorage.getItem('activeLink');
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const handleMobileMenuToggle = () => setMobileMenuOpen(!isMobileMenuOpen)
 
-    // Set the active link from local storage or the current location
+  useEffect(() => {
+    const storedActiveLink = localStorage.getItem('activeLink');
     setActiveLink(storedActiveLink || location.pathname);
   }, [location]);
 
-  // Handle the click event of a menu item
   const handleMenuItemClick = (link) => {
     setActiveLink(link);
-
-    // Store the active link in local storage
     localStorage.setItem('activeLink', link);
   };
+
+  const [dropdownOpen, setDropdownOpen] = useState({
+    panels: false,
+    inverter: false,
+    packages: false
+  });
+
+  const handleDropdownToggle = () => {
+    setDropdownOpen(!dropdownOpen)
+  }
 
 
   return (
@@ -146,7 +153,7 @@ const Navbar = () => {
                   </div>
                   {/* Mobile Menu Hamburger Start */}
                   <div className="mobile-menu-hamburger mobile-menu-hamburger-white d-md-block d-lg-none">
-                    <Link to="javascript:void(0)">
+                    <Link to="#" onClick={handleMobileMenuToggle}>
                       <span>Menu</span>
                       <i className="icon ion-android-menu" />
                     </Link>
@@ -159,7 +166,7 @@ const Navbar = () => {
         </div>
         {/* Header Top End */}
         {/* Mobile Menu Start */}
-        <div className="mobile-menu-wrapper">
+        <div className={`mobile-menu-wrapper ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="offcanvas-overlay" />
           {/* Mobile Menu Inner Start */}
           <div className="mobile-menu-inner">
@@ -171,7 +178,7 @@ const Navbar = () => {
               </div>
               {/* Mobile Menu Logo End */}
               {/* Button Close Start */}
-              <div className="offcanvas-btn-close">
+              <div className="offcanvas-btn-close" onClick={handleMobileMenuToggle}>
                 <i className="icofont-close-line" />
               </div>
               {/* Button Close End */}
@@ -182,10 +189,10 @@ const Navbar = () => {
               <nav>
                 <ul className="mobile-menu">
                   <li className="has-children">
-                    <Link to="#">About</Link>
+                    <Link to="/about">About</Link>
                   </li>
                   <li className="has-children">
-                    <Link to="#">
+                    <Link to="/panels">
                       Panels{" "}
                       <i className="icofont-rounded-down" aria-hidden="true" />
                     </Link>
@@ -205,7 +212,7 @@ const Navbar = () => {
                     </ul>
                   </li>
                   <li className="has-children">
-                    <Link to="#">
+                    <Link to="/inverter" onClick={() => handleDropdownToggle('inverter')}>
                       Inverter{" "}
                       <i className="icofont-rounded-down" aria-hidden="true" />
                     </Link>
@@ -228,7 +235,7 @@ const Navbar = () => {
                     </ul>
                   </li>
                   <li className="has-children">
-                    <Link to="#">
+                    <Link to="/packages">
                       Packages{" "}
                       <i className="icofont-rounded-down" aria-hidden="true" />
                     </Link>
@@ -242,16 +249,16 @@ const Navbar = () => {
                     </ul>
                   </li>
                   <li>
-                    <Link to="#">Gallery</Link>
+                    <Link to="/gallary">Gallery</Link>
                   </li>
                   <li>
-                    <Link to="#">Finance Options</Link>
+                    <Link to="/finance">Finance Options</Link>
                   </li>
                   <li>
-                    <Link to="#">Contacts</Link>
+                    <Link to="/contact">Contacts</Link>
                   </li>
                   <li>
-                    <Link to="#">Consumer Guide</Link>
+                    <Link to="/consumer">Consumer Guide</Link>
                   </li>
                 </ul>
               </nav>

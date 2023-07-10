@@ -26,19 +26,19 @@ const Inverter = () => {
                     <div className="row mt-n2">
                         <div className="messonry-button-w">
                             <div className="messonry-button">
-                                <a href="index.html" className="is-checked port-filter">
+                                <a href="/" className="is-checked port-filter">
                                     Growatt
                                 </a>
-                                <a href="index.html" className="port-filter">
+                                <a href="/" className="port-filter">
                                     Fronius
                                 </a>
-                                <a href="index.html" className="port-filter">
+                                <a href="/" className="port-filter">
                                     ABB
                                 </a>
-                                <a href="index.html" className="port-filter">
+                                <a href="/" className="port-filter">
                                     SMA
                                 </a>
-                                <a href="index.html" className="port-filter">
+                                <a href="/" className="port-filter">
                                     Sungrow
                                 </a>
                             </div>
