@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+
   const [ActiveLink, setActiveLink] = useState("");
   const location = useLocation();
 
@@ -15,24 +16,24 @@ const Navbar = () => {
     localStorage.setItem("activeLink", link);
   };
 
+
+
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState({
-    panels: false,
-    inverter: false,
-    packages: false,
-  });
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    setDropdownOpen(false);
   };
 
-  const handleDropdownToggle = (dropdownName) => {
-    setDropdownOpen((prevState) => ({
-      ...prevState,
-      [dropdownName]: !prevState[dropdownName],
-    }));
+  const handleDropdownToggle = () => {
+    setDropdownOpen(!dropdownOpen);
   };
 
+  const handleDropdownOptionClick = () => {
+    setDropdownOpen(false);
+  };
 
 
 
@@ -234,28 +235,40 @@ const Navbar = () => {
                   <li className="has-children">
                     <Link to="/about">About</Link>
                   </li>
-                  <li className={`has-children ${dropdownOpen.panels ? "open" : ""}`}>
-                    <Link to="/panels" onClick={() => handleDropdownToggle("panels")}>
+                  <li
+                    className={`has-children ${dropdownOpen ? "active" : ""}`}
+                  >
+                    <Link to="/panels" onClick={() => setDropdownOpen(!dropdownOpen)}>
                       Panels{" "}
-                      <i className="icofont-rounded-down" aria-hidden="true" />
+                      <i className={`icofont-rounded-down ${dropdownOpen ? "active" : ""}`} aria-hidden="true" />
                     </Link>
-                    <ul className="dropdown">
+                    <ul className={`dropdown ${dropdownOpen ? "open" : ""}`}>
                       <li>
-                        <Link to="#">Q-Cells Panels</Link>
+                        <Link to="#">
+                          Q-Cells Panels
+                        </Link>
                       </li>
                       <li>
-                        <Link to="#">Canadian Solar</Link>
+                        <Link to="#">
+                          Canadian Solar
+                        </Link>
                       </li>
                       <li>
-                        <Link to="#">LG Panels</Link>
+                        <Link to="#">
+                          LG Panels
+                        </Link>
                       </li>
                       <li>
-                        <Link to="#">Jinko</Link>
+                        <Link to="#">
+                          Jinko
+                        </Link>
                       </li>
                     </ul>
                   </li>
-                  <li className={`has-children ${dropdownOpen.inverter ? "open" : ""}`}>
-                    <Link to="/inverter" onClick={() => handleDropdownToggle("inverter")}>
+                  <li
+                    className="has-children"
+                  >
+                    <Link to="/inverter">
                       Inverter{" "}
                       <i className="icofont-rounded-down" aria-hidden="true" />
                     </Link>
@@ -277,8 +290,10 @@ const Navbar = () => {
                       </li>
                     </ul>
                   </li>
-                  <li className={`has-children ${dropdownOpen.packages ? "open" : ""}`}>
-                    <Link to="/packages" onClick={() => handleDropdownToggle("packages")}>
+                  <li
+                    className="has-children"
+                  >
+                    <Link to="/packages">
                       Packages{" "}
                       <i className="icofont-rounded-down" aria-hidden="true" />
                     </Link>
