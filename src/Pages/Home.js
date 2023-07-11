@@ -156,7 +156,7 @@ const Home = () => {
               </section>
             </Slide>
             <Slide>
-              <section className="section" id="page2">
+              <section className="page2">
                 {/* History Section Start */}
                 <div className="section">
                   <div className="container">
@@ -165,36 +165,30 @@ const Home = () => {
                         <div className="history-wrapper">
                           <h1 className="title align-items-center d-flex">
                             Oz Need Solar <span className="orange-color" />{" "}
-                            <span className="title-right">
-                              Powering your business
-                            </span>
+                            <span className="title-right">Powering your business</span>
                           </h1>
                           <div className="history-content">
                             <h4 className="subtitle">
-                              Oz solar needs exist to happily serve our
-                              community with the incredible experience of
-                              benefiting from the power of the sun at their
-                              homes or businesses. Since our business is built
-                              on happy customers who are eager to refer their
-                              friends and family, it’s in our best interest to
-                              provide outstanding customer satisfaction and
-                              service in every aspect of installation.
+                              Oz solar needs exist to happily serve our community with the
+                              incredible experience of benefiting from the power of the sun at
+                              their homes or businesses. Since our business is built on happy
+                              customers who are eager to refer their friends and family, it’s
+                              in our best interest to provide outstanding customer
+                              satisfaction and service in every aspect of installation.
                               <p />
                               <p>
-                                Our team is dedicated to making sure that
-                                quality is built into everything we do and that
-                                our customers always receive the best products
-                                and services, keeping them informed every step
-                                of the way. All of our installers have undergone
-                                rigorous training through the clean energy
-                                council.{" "}
+                                Our team is dedicated to making sure that quality is built
+                                into everything we do and that our customers always receive
+                                the best products and services, keeping them informed every
+                                step of the way. All of our installers have undergone rigorous
+                                training through the clean energy council.{" "}
                               </p>
                             </h4>
                           </div>
                           <div className="mt-5">
-                            <Link href="#" className="btn btn-primary">
+                            <a href="#" className="btn btn-primary">
                               About Us
-                            </Link>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -204,8 +198,7 @@ const Home = () => {
                             <div className="about-box about-bg01">
                               <h4 className="text-white">Powerfull Strategy</h4>
                               <p className="text-white">
-                                Facilities meet high security requirements and
-                                are certified
+                                Facilities meet high security requirements and are certified
                               </p>
                             </div>
                           </div>
@@ -218,9 +211,7 @@ const Home = () => {
                                 <div className="col-lg-7 col-7">
                                   <h6 className="text-white mb-0">More Than</h6>
                                   <h1 className="text-white mb-0">YEARS</h1>
-                                  <h6 className="text-white mb-0">
-                                    of experience
-                                  </h6>
+                                  <h6 className="text-white mb-0">of experience</h6>
                                 </div>
                                 <div className="col-lg-12 col-12">
                                   <h6 className="text-white mt-3 mb-0">
@@ -234,8 +225,8 @@ const Home = () => {
                             <div className="about-box about-bg03">
                               <h4 className="text-white">Award Winning</h4>
                               <p className="text-white">
-                                International supply chains involves of unknown
-                                risks and Challenges.
+                                International supply chains involves of unknown risks and
+                                Challenges.
                               </p>
                             </div>
                           </div>
@@ -243,8 +234,8 @@ const Home = () => {
                             <div className="about-box about-bg04">
                               <h4 className="text-white">Accurate Testing</h4>
                               <p className="text-white">
-                                Utilising latest processing solutions, and
-                                decades of work experience.
+                                Utilising latest processing solutions, and decades of work
+                                experience.
                               </p>
                             </div>
                           </div>
@@ -255,6 +246,7 @@ const Home = () => {
                 </div>
                 {/* History Section End */}
               </section>
+
             </Slide>
             <Slide>
               <section className="section" id="page3">
