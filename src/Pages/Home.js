@@ -9,6 +9,8 @@ import Footer from "../Components/Footer";
 const Home = () => {
 
 
+
+
   useEffect(() => {
     new Swiper(".swiper-container", {
       slidesPerView: 1,
@@ -61,6 +63,7 @@ const Home = () => {
       });
     };
   }, []);
+
 
   return (
     <>
@@ -975,7 +978,6 @@ const Home = () => {
                               {/* Add more slides as needed */}
                             </div>
                           </div>
-
                         </div>
                       </div>
                     </div>
@@ -1165,7 +1167,7 @@ const Home = () => {
               </section>
             </Slide>
             <Slide>
-              <section className="section" id="page9">
+              <section className="section" id="page9" style={{ height: 1 }}>
                 <Footer />
               </section>
             </Slide>

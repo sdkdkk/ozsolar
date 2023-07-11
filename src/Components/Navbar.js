@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-
   const [ActiveLink, setActiveLink] = useState("");
   const location = useLocation();
+
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const handleMobileMenuToggle = () => setMobileMenuOpen(!isMobileMenuOpen);
 
   useEffect(() => {
     const storedActiveLink = localStorage.getItem("activeLink");
@@ -16,24 +18,13 @@ const Navbar = () => {
     localStorage.setItem("activeLink", link);
   };
 
+  const [dropdownOpen, setDropdownOpen] = useState({
+    panels: false,
+    inverter: false,
+    packages: false,
+  });
 
-
-
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const handleMobileMenuToggle = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-    setDropdownOpen(false);
-  };
-
-  const handleDropdownToggle = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
-
-  const handleDropdownOptionClick = () => {
-    setDropdownOpen(false);
-  };
+  const handleDropdownToggle = () => setDropdownOpen(!dropdownOpen);
 
 
 
@@ -210,7 +201,8 @@ const Navbar = () => {
         </div>
         {/* Header Top End */}
         {/* Mobile Menu Start */}
-        <div className={`mobile-menu-wrapper ${isMobileMenuOpen ? "open" : ""}`}>
+        <div
+          className={`mobile-menu-wrapper ${isMobileMenuOpen ? "open" : ""}`}>
           <div className="offcanvas-overlay" />
           {/* Mobile Menu Inner Start */}
           <div className="mobile-menu-inner">
@@ -222,7 +214,9 @@ const Navbar = () => {
               </div>
               {/* Mobile Menu Logo End */}
               {/* Button Close Start */}
-              <div className="offcanvas-btn-close" onClick={handleMobileMenuToggle}>
+              <div
+                className="offcanvas-btn-close"
+                onClick={handleMobileMenuToggle}>
                 <i className="icofont-close-line" />
               </div>
               {/* Button Close End */}
@@ -235,40 +229,30 @@ const Navbar = () => {
                   <li className="has-children">
                     <Link to="/about">About</Link>
                   </li>
-                  <li
-                    className={`has-children ${dropdownOpen ? "active" : ""}`}
-                  >
-                    <Link to="/panels" onClick={() => setDropdownOpen(!dropdownOpen)}>
+                  <li className="has-children">
+                    <Link to="/panels">
                       Panels{" "}
-                      <i className={`icofont-rounded-down ${dropdownOpen ? "active" : ""}`} aria-hidden="true" />
+                      <i className="icofont-rounded-down" aria-hidden="true" />
                     </Link>
-                    <ul className={`dropdown ${dropdownOpen ? "open" : ""}`}>
+                    <ul className="dropdown">
                       <li>
-                        <Link to="#">
-                          Q-Cells Panels
-                        </Link>
+                        <Link to="#">Q-Cells Panels</Link>
                       </li>
                       <li>
-                        <Link to="#">
-                          Canadian Solar
-                        </Link>
+                        <Link to="#">Canadian Solar</Link>
                       </li>
                       <li>
-                        <Link to="#">
-                          LG Panels
-                        </Link>
+                        <Link to="#">LG Panels</Link>
                       </li>
                       <li>
-                        <Link to="#">
-                          Jinko
-                        </Link>
+                        <Link to="#">Jinko</Link>
                       </li>
                     </ul>
                   </li>
-                  <li
-                    className="has-children"
-                  >
-                    <Link to="/inverter">
+                  <li className="has-children">
+                    <Link
+                      to="/inverter"
+                      onClick={() => handleDropdownToggle("inverter")}>
                       Inverter{" "}
                       <i className="icofont-rounded-down" aria-hidden="true" />
                     </Link>
@@ -280,19 +264,17 @@ const Navbar = () => {
                         <Link to="#">ABB</Link>
                       </li>
                       <li>
-                        <Link to="#">SMA</Link>
+                        <Link to="#">SMA </Link>
                       </li>
                       <li>
-                        <Link to="#">Growatt</Link>
+                        <Link to="#">Growatt </Link>
                       </li>
                       <li>
                         <Link to="#">Sungrow</Link>
                       </li>
                     </ul>
                   </li>
-                  <li
-                    className="has-children"
-                  >
+                  <li className="has-children">
                     <Link to="/packages">
                       Packages{" "}
                       <i className="icofont-rounded-down" aria-hidden="true" />
@@ -307,7 +289,7 @@ const Navbar = () => {
                     </ul>
                   </li>
                   <li>
-                    <Link to="/gallery">Gallery</Link>
+                    <Link to="/gallary">Gallery</Link>
                   </li>
                   <li>
                     <Link to="/finance">Finance Options</Link>
