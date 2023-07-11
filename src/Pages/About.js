@@ -39,6 +39,7 @@ const About = () => {
   }, []);
 
 
+
   return (
     <>
       <div className=" disabled-onepage-scroll">
