@@ -22,6 +22,46 @@ const Home = () => {
     });
   }, []);
 
+
+
+  useEffect(() => {
+    // Initialize Swiper slider
+    const slider = new Swiper('.hero-slider .swiper-container', {
+      loop: true,
+      navigation: {
+        prevEl: '.home-slider-prev',
+        nextEl: '.home-slider-next',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+    // Trigger slider navigation on button click
+    const prevButton = document.querySelector('.home-slider-prev');
+    const nextButton = document.querySelector('.home-slider-next');
+
+    prevButton.addEventListener('click', () => {
+      slider.slidePrev();
+    });
+
+    nextButton.addEventListener('click', () => {
+      slider.slideNext();
+    });
+
+    // Clean up event listeners on component unmount
+    return () => {
+      prevButton.removeEventListener('click', () => {
+        slider.slidePrev();
+      });
+
+      nextButton.removeEventListener('click', () => {
+        slider.slideNext();
+      });
+    };
+  }, []);
+
   return (
     <>
       <div className="wrapper">
