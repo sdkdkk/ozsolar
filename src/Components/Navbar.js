@@ -24,9 +24,10 @@ const Navbar = () => {
     packages: false,
   });
 
-  const handleDropdownToggle = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
+  const handleDropdownToggle = () => setDropdownOpen(!dropdownOpen);
+
+
+
 
   return (
     <>

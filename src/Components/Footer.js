@@ -28,22 +28,22 @@ const Footer = () => {
               {/* Footer Nav Start */}
               <ul className="footer-nav">
                 <li>
-                  <Link href="#">About</Link>
+                  <Link href="/about">About</Link>
                 </li>
                 <li>
-                  <Link href="#">Gallery</Link>
+                  <Link href="/gallary">Gallery</Link>
                 </li>
                 <li>
-                  <Link href="#">Contact</Link>
+                  <Link href="/contact">Contact</Link>
                 </li>
                 <li>
-                  <Link href="#">Consumer Guide</Link>
+                  <Link href="/consumer">Consumer Guide</Link>
                 </li>
                 <li>
-                  <Link href="#">Inverter</Link>
+                  <Link href="/inverter">Inverter</Link>
                 </li>
                 <li>
-                  <Link href="#">Panels</Link>
+                  <Link href="/panels">Panels</Link>
                 </li>
               </ul>
               {/* Footer Nav End */}
