@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 
 const ScrollToTop = () => {
-
     const [Down, setDown] = useState(false);
 
     const Move = () => {
@@ -20,12 +19,10 @@ const ScrollToTop = () => {
         }
     }
 
-
     useEffect(() => {
         window.addEventListener("scroll", listenToScroll);
         return () => window.removeEventListener("scroll", listenToScroll);
     });
-
 
     return (
         <>
@@ -33,11 +30,6 @@ const ScrollToTop = () => {
                 Down && <a href="##" className="scroll-top" id="scroll-top" onClick={Move}>
                     <FaArrowUp className="AiOutlineArrowUp" />
                 </a>
-                // <div className="right text-end fixed-bottom" style={{ margin: '10px' }}>
-                //     <button type="button" className="btn btn-danger rounded-circle" onClick={Move}>
-                //         <FaArrowUp className="AiOutlineArrowUp" />
-                //     </button>
-                // </div>
             }
         </>
     );
