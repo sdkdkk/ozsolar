@@ -5,6 +5,7 @@ import { FullPage, Slide } from "react-full-page";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 
+
 const Home = () => {
 
 
@@ -67,7 +68,7 @@ const Home = () => {
   return (
     <>
       <div className="wrapper">
-        <div className="main ">
+        <div className="main">
           <FullPage>
             <Slide>
               <section className="section" id="page1">
