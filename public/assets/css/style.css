@@ -18065,7 +18065,7 @@ ul li {
 /*-- Sticky Header --*/
 
 .header-sticky .container-fluid {
-    padding: 0px 20px;
+    padding: 0px 10px;
 }
 
 .header-sticky.sticky {
