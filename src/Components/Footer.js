@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="col-lg-3">
               {/* Footer Logo Start */}
               <div className="footer-logo">
-                <Link href="index.html">
+                <Link to='/'>
                   <img
                     src="assets/images/logo/logo-black.png"
                     alt="Logo Black"
