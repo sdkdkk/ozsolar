@@ -1,30 +1,37 @@
-import React, { useState } from 'react';
-import Footer from '../Components/Footer';
+import React, { useState } from "react";
+import Footer from "../Components/Footer";
 
 const GalleryComponent = () => {
-  const [filter, setFilter] = useState('*');
+  const [filter, setFilter] = useState("*");
 
   const handleFilterClick = (filterValue) => {
     setFilter(filterValue);
   };
 
   const galleryItems = [
-    { category: 'cat-2 cat-3 cat-4', imagePath: 'assets/images/gallery/2.jpg' },
-    { category: 'cat-2 cat-3 cat-4', imagePath: 'assets/images/gallery/3.jpg' },
-    { category: 'cat-1 cat-2', imagePath: 'assets/images/gallery/4.jpg' },
-    { category: 'cat-4 cat-3', imagePath: 'assets/images/gallery/5.jpg' },
-    { category: 'cat-2 cat-1', imagePath: 'assets/images/gallery/6.jpg' },
-    { category: 'cat-1 cat-4', imagePath: 'assets/images/gallery/7.jpg' },
-    { category: 'cat-1 cat-3', imagePath: 'assets/images/gallery/8.jpg' },
-    { category: 'cat-2 cat-4', imagePath: 'assets/images/gallery/9.jpg' },
-    { category: 'cat-1 cat-3', imagePath: 'assets/images/gallery/10.jpg' },
+    { category: "cat-2 cat-3 cat-4", imagePath: "assets/images/gallery/2.jpg" },
+    { category: "cat-2 cat-3 cat-4", imagePath: "assets/images/gallery/3.jpg" },
+    { category: "cat-1 cat-2", imagePath: "assets/images/gallery/4.jpg" },
+    { category: "cat-4 cat-3", imagePath: "assets/images/gallery/5.jpg" },
+    { category: "cat-2 cat-1", imagePath: "assets/images/gallery/6.jpg" },
+    { category: "cat-1 cat-4", imagePath: "assets/images/gallery/7.jpg" },
+    { category: "cat-1 cat-3", imagePath: "assets/images/gallery/8.jpg" },
+    { category: "cat-2 cat-4", imagePath: "assets/images/gallery/9.jpg" },
+    { category: "cat-1 cat-3", imagePath: "assets/images/gallery/10.jpg" },
   ];
 
-  const filteredGalleryItems = filter === '*' ? galleryItems : galleryItems.filter(item => item.category.includes(filter));
+  const filteredGalleryItems =
+    filter === "*"
+      ? galleryItems
+      : galleryItems.filter((item) => item.category.includes(filter));
 
   return (
     <>
-      <div className="section about-banner-image" style={{ backgroundImage: "url(assets/images/gallery/large-gallery.jpg)" }}>
+      <div
+        className="section about-banner-image"
+        style={{
+          backgroundImage: "url(assets/images/gallery/large-gallery.jpg)",
+        }}>
         <div className="container">
           <div className="row">
             <div className="content">
@@ -37,16 +44,38 @@ const GalleryComponent = () => {
           <div className="row mt-n2">
             <div className="messonry-button-w">
               <div className="messonry-button text-left">
-                <button onClick={() => handleFilterClick('*')} className={filter === '*' ? 'is-checked port-filter' : 'port-filter'}>
+                <button
+                  onClick={() => handleFilterClick("*")}
+                  className={
+                    filter === "*" ? "is-checked port-filter" : "port-filter"
+                  }>
                   View All
                 </button>
-                <button onClick={() => handleFilterClick('cat-1')} className={filter === 'cat-1' ? 'is-checked port-filter' : 'port-filter'}>
+                <button
+                  onClick={() => handleFilterClick("cat-1")}
+                  className={
+                    filter === "cat-1"
+                      ? "is-checked port-filter"
+                      : "port-filter"
+                  }>
                   Panels
                 </button>
-                <button onClick={() => handleFilterClick('cat-2')} className={filter === 'cat-2' ? 'is-checked port-filter' : 'port-filter'}>
+                <button
+                  onClick={() => handleFilterClick("cat-2")}
+                  className={
+                    filter === "cat-2"
+                      ? "is-checked port-filter"
+                      : "port-filter"
+                  }>
                   Inverter
                 </button>
-                <button onClick={() => handleFilterClick('cat-3')} className={filter === 'cat-3' ? 'is-checked port-filter' : 'port-filter'}>
+                <button
+                  onClick={() => handleFilterClick("cat-3")}
+                  className={
+                    filter === "cat-3"
+                      ? "is-checked port-filter"
+                      : "port-filter"
+                  }>
                   Other
                 </button>
               </div>
@@ -63,8 +92,15 @@ const GalleryComponent = () => {
               <div key={index} className={`col ${item.category} mb-10`}>
                 <div className="single-project-wrap">
                   <div className="project-thumb position-relative m-0">
-                    <a className="image" href={item.imagePath} data-magnific="image">
-                      <img src={item.imagePath} alt="" />
+                    <a
+                      className="image"
+                      href={item.imagePath}
+                      data-magnific="image">
+                      <img
+                        src={item.imagePath}
+                        alt=""
+                        style={{ width: "300px", height: "200px" }}
+                      />
                     </a>
                   </div>
                 </div>
@@ -89,7 +125,10 @@ const GalleryComponent = () => {
                     </div>
                     <div className="packages-section-content">
                       <h5 className="d-inline mb--0">Download Brochure</h5>
-                      <p className="mb-0">Download datasheets brochures technical documents &amp; certification</p>
+                      <p className="mb-0">
+                        Download datasheets brochures technical documents &amp;
+                        certification
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -100,7 +139,10 @@ const GalleryComponent = () => {
                     </div>
                     <div className="packages-section-content">
                       <h5 className="d-inline mb--0">Download Brochure</h5>
-                      <p className="mb-0">Download datasheets brochures technical documents &amp; certification</p>
+                      <p className="mb-0">
+                        Download datasheets brochures technical documents &amp;
+                        certification
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -111,7 +153,10 @@ const GalleryComponent = () => {
                     </div>
                     <div className="packages-section-content">
                       <h5 className="d-inline mb--0">Download Brochure</h5>
-                      <p className="mb-0">Download datasheets brochures technical documents &amp; certification</p>
+                      <p className="mb-0">
+                        Download datasheets brochures technical documents &amp;
+                        certification
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -120,7 +165,7 @@ const GalleryComponent = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
