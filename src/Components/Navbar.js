@@ -2,33 +2,31 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-
-  const [ActiveLink, setActiveLink] = useState('');
+  const [ActiveLink, setActiveLink] = useState("");
   const location = useLocation();
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const handleMobileMenuToggle = () => setMobileMenuOpen(!isMobileMenuOpen)
+  const handleMobileMenuToggle = () => setMobileMenuOpen(!isMobileMenuOpen);
 
   useEffect(() => {
-    const storedActiveLink = localStorage.getItem('activeLink');
+    const storedActiveLink = localStorage.getItem("activeLink");
     setActiveLink(storedActiveLink || location.pathname);
   }, [location]);
 
   const handleMenuItemClick = (link) => {
     setActiveLink(link);
-    localStorage.setItem('activeLink', link);
+    localStorage.setItem("activeLink", link);
   };
 
   const [dropdownOpen, setDropdownOpen] = useState({
     panels: false,
     inverter: false,
-    packages: false
+    packages: false,
   });
 
   const handleDropdownToggle = () => {
-    setDropdownOpen(!dropdownOpen)
-  }
-
+    setDropdownOpen(!dropdownOpen);
+  };
 
   return (
     <>
@@ -42,9 +40,10 @@ const Navbar = () => {
                 <div className="col-lg-2 col-md-3 col-6">
                   {/* Header Logo Start */}
                   <div className="header-logo">
-                    <Link className={ActiveLink === '/' ? 'active' : ''} to="/"
-                      onClick={() => handleMenuItemClick('/')}
-                    >
+                    <Link
+                      className={ActiveLink === "/" ? "active" : ""}
+                      to="/"
+                      onClick={() => handleMenuItemClick("/")}>
                       <img
                         className="fit-image"
                         src="assets/images/logo/logo-black.png"
@@ -61,16 +60,21 @@ const Navbar = () => {
                     <nav className="main-menu main-menu-white">
                       <ul>
                         <li>
-                          <Link className={ActiveLink === '/about' ? 'active' : ''} to="/about"
-                            onClick={() => handleMenuItemClick('/about')}
-                          >
+                          <Link
+                            className={ActiveLink === "/about" ? "active" : ""}
+                            to="/about"
+                            onClick={() => handleMenuItemClick("/about")}>
                             About
                           </Link>
                         </li>
-                        <li className={ActiveLink === '/panels' ? 'active' : ''}>
-                          <Link className={ActiveLink === '/panels' ? 'active' : ''} to="/panels"
-                            onClick={() => handleMenuItemClick('/panels')}
-                          >Panels</Link>
+                        <li
+                          className={ActiveLink === "/panels" ? "active" : ""}>
+                          <Link
+                            className={ActiveLink === "/panels" ? "active" : ""}
+                            to="/panels"
+                            onClick={() => handleMenuItemClick("/panels")}>
+                            Panels
+                          </Link>
                           <ul className="submenu">
                             <li>
                               <Link to="#">Q-Cells Panels</Link>
@@ -87,9 +91,14 @@ const Navbar = () => {
                           </ul>
                         </li>
                         <li>
-                          <Link className={ActiveLink === '/inverter' ? 'active' : ''} to='/inverter'
-                            onClick={() => handleMenuItemClick('/inverter')}
-                          >Inverter</Link>
+                          <Link
+                            className={
+                              ActiveLink === "/inverter" ? "active" : ""
+                            }
+                            to="/inverter"
+                            onClick={() => handleMenuItemClick("/inverter")}>
+                            Inverter
+                          </Link>
                           <ul className="submenu">
                             <li>
                               <Link to="#">Fronius </Link>
@@ -109,9 +118,14 @@ const Navbar = () => {
                           </ul>
                         </li>
                         <li>
-                          <Link className={ActiveLink === '/packages' ? 'active' : ''} to='/packages'
-                            onClick={() => handleMenuItemClick('/packages')}
-                          >Packages</Link>
+                          <Link
+                            className={
+                              ActiveLink === "/packages" ? "active" : ""
+                            }
+                            to="/packages"
+                            onClick={() => handleMenuItemClick("/packages")}>
+                            Packages
+                          </Link>
                           <ul className="submenu">
                             <li>
                               <Link to="#">Residential</Link>
@@ -122,24 +136,44 @@ const Navbar = () => {
                           </ul>
                         </li>
                         <li>
-                          <Link className={ActiveLink === '/gallary' ? 'active' : ''} to="/gallary"
-                            onClick={() => handleMenuItemClick('/gallary')}
-                          >Gallery</Link>
+                          <Link
+                            className={
+                              ActiveLink === "/gallary" ? "active" : ""
+                            }
+                            to="/gallary"
+                            onClick={() => handleMenuItemClick("/gallary")}>
+                            Gallery
+                          </Link>
                         </li>
                         <li>
-                          <Link className={ActiveLink === '/finance' ? 'active' : ''} to="/finance"
-                            onClick={() => handleMenuItemClick('/finance')}
-                          >Finance Options</Link>
+                          <Link
+                            className={
+                              ActiveLink === "/finance" ? "active" : ""
+                            }
+                            to="/finance"
+                            onClick={() => handleMenuItemClick("/finance")}>
+                            Finance Options
+                          </Link>
                         </li>
                         <li>
-                          <Link className={ActiveLink === '/contact' ? 'active' : ''} to="/contact"
-                            onClick={() => handleMenuItemClick('/contact')}
-                          >Contacts</Link>
+                          <Link
+                            className={
+                              ActiveLink === "/contact" ? "active" : ""
+                            }
+                            to="/contact"
+                            onClick={() => handleMenuItemClick("/contact")}>
+                            Contacts
+                          </Link>
                         </li>
                         <li>
-                          <Link className={ActiveLink === '/consumer' ? 'active' : ''} to="/consumer"
-                            onClick={() => handleMenuItemClick('/consumer')}
-                          >Consumer Guide</Link>
+                          <Link
+                            className={
+                              ActiveLink === "/consumer" ? "active" : ""
+                            }
+                            to="/consumer"
+                            onClick={() => handleMenuItemClick("/consumer")}>
+                            Consumer Guide
+                          </Link>
                         </li>
                       </ul>
                     </nav>
@@ -166,7 +200,8 @@ const Navbar = () => {
         </div>
         {/* Header Top End */}
         {/* Mobile Menu Start */}
-        <div className={`mobile-menu-wrapper ${isMobileMenuOpen ? 'open' : ''}`}>
+        <div
+          className={`mobile-menu-wrapper ${isMobileMenuOpen ? "open" : ""}`}>
           <div className="offcanvas-overlay" />
           {/* Mobile Menu Inner Start */}
           <div className="mobile-menu-inner">
@@ -178,7 +213,9 @@ const Navbar = () => {
               </div>
               {/* Mobile Menu Logo End */}
               {/* Button Close Start */}
-              <div className="offcanvas-btn-close" onClick={handleMobileMenuToggle}>
+              <div
+                className="offcanvas-btn-close"
+                onClick={handleMobileMenuToggle}>
                 <i className="icofont-close-line" />
               </div>
               {/* Button Close End */}
@@ -212,7 +249,9 @@ const Navbar = () => {
                     </ul>
                   </li>
                   <li className="has-children">
-                    <Link to="/inverter" onClick={() => handleDropdownToggle('inverter')}>
+                    <Link
+                      to="/inverter"
+                      onClick={() => handleDropdownToggle("inverter")}>
                       Inverter{" "}
                       <i className="icofont-rounded-down" aria-hidden="true" />
                     </Link>
@@ -271,7 +310,6 @@ const Navbar = () => {
       </div>
       {/* Header Section End */}
     </>
-
   );
 };
 
