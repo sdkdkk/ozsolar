@@ -119,7 +119,7 @@ const About = () => {
                         <img src="assets/images/about/abouticon2.svg" alt="" />
                       </div>
                       <h3 className="f-700">
-                        <span className="odometer"/>
+                        <span className="odometer" />
                         <Odometer
                           value={odometerValue1}
                           format="(,ddd),dd"
