@@ -66,10 +66,7 @@ const GalleryComponent = () => {
                     className="image"
                     href="assets/images/gallery/2.jpg"
                     data-magnific="image">
-                    <img
-                      src="assets/images/gallery/2.jpg"
-                      alt=""
-                    />
+                    <img src="assets/images/gallery/2.jpg" alt="" />
                   </a>
                 </div>
               </div>
@@ -83,10 +80,7 @@ const GalleryComponent = () => {
                     className="image"
                     href="assets/images/gallery/3.jpg"
                     data-magnific="image">
-                    <img
-                      src="assets/images/gallery/3.jpg"
-                      alt=""
-                    />
+                    <img src="assets/images/gallery/3.jpg" alt="" />
                   </a>
                 </div>
               </div>
@@ -100,10 +94,7 @@ const GalleryComponent = () => {
                     className="image"
                     href="assets/images/gallery/4.jpg"
                     data-magnific="image">
-                    <img
-                      src="assets/images/gallery/4.jpg"
-                      alt=""
-                    />
+                    <img src="assets/images/gallery/4.jpg" alt="" />
                   </a>
                 </div>
               </div>
@@ -117,10 +108,7 @@ const GalleryComponent = () => {
                     className="image"
                     href="assets/images/gallery/5.jpg"
                     data-magnific="image">
-                    <img
-                      src="assets/images/gallery/5.jpg"
-                      alt=""
-                    />
+                    <img src="assets/images/gallery/5.jpg" alt="" />
                   </a>
                 </div>
               </div>
@@ -134,10 +122,7 @@ const GalleryComponent = () => {
                     className="image"
                     href="assets/images/gallery/6.jpg"
                     data-magnific="image">
-                    <img
-                      src="assets/images/gallery/6.jpg"
-                      alt=""
-                    />
+                    <img src="assets/images/gallery/6.jpg" alt="" />
                   </a>
                 </div>
               </div>
@@ -151,10 +136,7 @@ const GalleryComponent = () => {
                     className="image"
                     href="assets/images/gallery/7.jpg"
                     data-magnific="image">
-                    <img
-                      src="assets/images/gallery/7.jpg"
-                      alt=""
-                    />
+                    <img src="assets/images/gallery/7.jpg" alt="" />
                   </a>
                 </div>
               </div>
@@ -168,10 +150,7 @@ const GalleryComponent = () => {
                     className="image"
                     href="assets/images/gallery/8.jpg"
                     data-magnific="image">
-                    <img
-                      src="assets/images/gallery/8.jpg"
-                      alt=""
-                    />
+                    <img src="assets/images/gallery/8.jpg" alt="" />
                   </a>
                 </div>
               </div>
@@ -185,10 +164,7 @@ const GalleryComponent = () => {
                     className="image"
                     href="assets/images/gallery/9.jpg"
                     data-magnific="image">
-                    <img
-                      src="assets/images/gallery/9.jpg"
-                      alt=""
-                    />
+                    <img src="assets/images/gallery/9.jpg" alt="" />
                   </a>
                 </div>
               </div>
@@ -202,10 +178,7 @@ const GalleryComponent = () => {
                     className="image"
                     href="assets/images/gallery/10.jpg"
                     data-magnific="image">
-                    <img
-                      src="assets/images/gallery/10.jpg"
-                      alt=""
-                    />
+                    <img src="assets/images/gallery/10.jpg" alt="" />
                   </a>
                 </div>
               </div>
