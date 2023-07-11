@@ -25,7 +25,6 @@ const Home = () => {
 
 
   useEffect(() => {
-    // Initialize Swiper slider
     const slider = new Swiper('.hero-slider .swiper-container', {
       loop: true,
       navigation: {
@@ -38,7 +37,7 @@ const Home = () => {
       },
     });
 
-    // Trigger slider navigation on button click
+
     const prevButton = document.querySelector('.home-slider-prev');
     const nextButton = document.querySelector('.home-slider-next');
 
@@ -50,7 +49,7 @@ const Home = () => {
       slider.slideNext();
     });
 
-    // Clean up event listeners on component unmount
+
     return () => {
       prevButton.removeEventListener('click', () => {
         slider.slidePrev();
