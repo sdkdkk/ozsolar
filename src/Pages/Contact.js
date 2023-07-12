@@ -34,7 +34,7 @@ const Contact = () => {
                 <div className="container-full">
                     <div className="row">
                         <div className="col-lg-5 d-none d-lg-block">
-                            <img className="w-100" src="assets/images/home/contact-us.jpg" />
+                            <img className="w-100" src="assets/images/home/contact-us.jpg" alt="" />
                         </div>
                         <div className="col-lg-7 align-items-center d-flex">
                             <div className="lets-talk-w">
@@ -163,7 +163,7 @@ const Contact = () => {
                                         {/* Section Title End */}
                                     </div>
                                     <div className="col-lg-4 col-4 text-end">
-                                        <img className="fleg" src="./assets/images/home/fleg.png" />
+                                        <img className="fleg" src="./assets/images/home/fleg.png" alt="" />
                                     </div>
                                 </div>
                                 <div className="contact-inner-box">

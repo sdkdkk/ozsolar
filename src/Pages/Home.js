@@ -189,7 +189,7 @@ const Home = () => {
                             </h4>
                           </div>
                           <div className="mt-5">
-                            <a href="#" className="btn btn-primary">
+                            <a href="##" className="btn btn-primary">
                               About Us
                             </a>
                           </div>

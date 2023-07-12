@@ -14,7 +14,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {/* <Backtotop /> */}
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
