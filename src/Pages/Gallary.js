@@ -5,6 +5,7 @@ import $ from "jquery";
 import "magnific-popup/dist/jquery.magnific-popup";
 
 const GalleryComponent = () => {
+
     useEffect(() => {
         $(".image").magnificPopup({
             type: "image",
@@ -12,7 +13,7 @@ const GalleryComponent = () => {
                 enabled: true,
             },
         });
-    }, []);
+    });
 
     return (
         <>

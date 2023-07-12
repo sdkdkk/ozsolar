@@ -6,6 +6,7 @@ import "odometer/themes/odometer-theme-default.css";
 import "odometer/themes/odometer-theme-default.css";
 import Swiper from "swiper";
 
+
 const About = () => {
   const [odometerValue, setOdometerValue] = useState(0);
   const [odometerValue1, setOdometerValue1] = useState();
@@ -18,25 +19,42 @@ const About = () => {
   }, []);
 
   useEffect(() => {
-    const swiper = new Swiper(".swiper-container", {
-      // Configure the options for the slider
+    const swiper = new Swiper('.swiper-container', {
       slidesPerView: 3,
       spaceBetween: 30,
       navigation: {
-        prevEl: ".client-crousel-prev",
-        nextEl: ".client-crousel-next",
+        prevEl: '.client-crousel-prev',
+        nextEl: '.client-crousel-next',
       },
       pagination: {
-        el: ".swiper-pagination",
+        el: '.swiper-pagination',
         clickable: true,
       },
     });
 
-    // Destroy the swiper instance when the component unmounts
+    const prevButton = document.querySelector('.client-crousel-prev');
+    const nextButton = document.querySelector('.client-crousel-next');
+
+    prevButton.addEventListener('click', () => {
+      swiper.slidePrev();
+    });
+
+    nextButton.addEventListener('click', () => {
+      swiper.slideNext();
+    });
+
     return () => {
-      swiper.destroy();
+      prevButton.removeEventListener('click', () => {
+        swiper.slidePrev();
+      });
+
+      nextButton.removeEventListener('click', () => {
+        swiper.slideNext();
+      });
     };
   }, []);
+
+
 
 
 
@@ -290,7 +308,10 @@ const About = () => {
                           {/* Client Thumb Icon Start */}
                           <div className="client-thumb-icon">
                             <div className="thumb">
-                              <img src="assets/images/home/review.png" alt="" />
+                              <img
+                                src="assets/images/home/review.png"
+                                alt=""
+                              />
                             </div>
                           </div>
                           {/* Client Thumb Icon End */}
@@ -300,11 +321,11 @@ const About = () => {
                             <p>
                               We, the Hooper Taxation Services Pty Ltd, (Ken and
                               Dionesia Goebel) would like to thank you “Oz Solar
-                              Needs” for your unbelievable, professional,
-                              honest, friendly and reliable service. You did an
-                              amazing job for our business and residential. What
-                              admire and amaze us the most is Jimmy’s
-                              unconditional helping hand and friendly advices.
+                              Needs” for your unbelievable, professional, honest,
+                              friendly and reliable service. You did an amazing job
+                              for our business and residential. What admire and
+                              amaze us the most is Jimmy’s unconditional helping
+                              hand and friendly advices.
                             </p>
                             {/* Name Start */}
                             <h6 className="name">
@@ -339,14 +360,13 @@ const About = () => {
                             <Link href="#">
                               {/* Name End */}
                               <p>
-                                We, the Hooper Taxation Services Pty Ltd, (Ken
-                                and Dionesia Goebel) would like to thank you “Oz
-                                Solar Needs” for your unbelievable,
-                                professional, honest, friendly and reliable
-                                service. You did an amazing job for our business
-                                and residential. What admire and amaze us the
-                                most is Jimmy’s unconditional helping hand and
-                                friendly advices.
+                                We, the Hooper Taxation Services Pty Ltd, (Ken and
+                                Dionesia Goebel) would like to thank you “Oz Solar
+                                Needs” for your unbelievable, professional, honest,
+                                friendly and reliable service. You did an amazing
+                                job for our business and residential. What admire
+                                and amaze us the most is Jimmy’s unconditional
+                                helping hand and friendly advices.
                               </p>
                               {/* Name Start */}
                             </Link>
@@ -383,14 +403,13 @@ const About = () => {
                             <Link href="#">
                               {/* Name End */}
                               <p>
-                                We, the Hooper Taxation Services Pty Ltd, (Ken
-                                and Dionesia Goebel) would like to thank you “Oz
-                                Solar Needs” for your unbelievable,
-                                professional, honest, friendly and reliable
-                                service. You did an amazing job for our business
-                                and residential. What admire and amaze us the
-                                most is Jimmy’s unconditional helping hand and
-                                friendly advices.
+                                We, the Hooper Taxation Services Pty Ltd, (Ken and
+                                Dionesia Goebel) would like to thank you “Oz Solar
+                                Needs” for your unbelievable, professional, honest,
+                                friendly and reliable service. You did an amazing
+                                job for our business and residential. What admire
+                                and amaze us the most is Jimmy’s unconditional
+                                helping hand and friendly advices.
                               </p>
                               {/* Name Start */}
                             </Link>
@@ -427,14 +446,13 @@ const About = () => {
                             <Link href="#">
                               {/* Name End */}
                               <p>
-                                We, the Hooper Taxation Services Pty Ltd, (Ken
-                                and Dionesia Goebel) would like to thank you “Oz
-                                Solar Needs” for your unbelievable,
-                                professional, honest, friendly and reliable
-                                service. You did an amazing job for our business
-                                and residential. What admire and amaze us the
-                                most is Jimmy’s unconditional helping hand and
-                                friendly advices.
+                                We, the Hooper Taxation Services Pty Ltd, (Ken and
+                                Dionesia Goebel) would like to thank you “Oz Solar
+                                Needs” for your unbelievable, professional, honest,
+                                friendly and reliable service. You did an amazing
+                                job for our business and residential. What admire
+                                and amaze us the most is Jimmy’s unconditional
+                                helping hand and friendly advices.
                               </p>
                               {/* Name Start */}
                             </Link>
