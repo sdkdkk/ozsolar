@@ -1,21 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaArrowUp } from 'react-icons/fa';
 
 const ScrollToTop = () => {
 
+    const scrollRef = useRef(0);
     const [showButton, setShowButton] = useState(false);
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        setShowButton(false);
     };
 
     const listenToScroll = () => {
-        let height = 200;
-        if (window.scrollY > height) {
+        const scrollTop = document.documentElement.scrollTop;
+        const prevScrollTop = scrollRef.current || 0;
+        if (scrollTop < prevScrollTop && scrollTop > 0) {
             setShowButton(true);
         } else {
             setShowButton(false);
         }
+        scrollRef.current = scrollTop;
     };
 
     useEffect(() => {
