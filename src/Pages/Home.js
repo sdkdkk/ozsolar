@@ -249,10 +249,9 @@ const Home = () => {
                 </div>
                 {/* History Section End */}
               </section>
-
             </Slide>
             <Slide>
-              <section className="section" id="page3">
+              <section className="page3">
                 {/* Solar Panel Works Section Start */}
                 <div className="section solarpanel-works-bg">
                   <div className="container-fluid">
@@ -260,69 +259,49 @@ const Home = () => {
                       <div className="col-lg-6 align-items-center solar-left-box">
                         {/* Section Title Start */}
                         <div className="section-title text-center">
-                          <h2 className="title text-white">
-                            How Solar Panel Works?
-                          </h2>
+                          <h2 className="title text-white">How Solar Panel Works?</h2>
                         </div>
                         {/* Section Title End */}
                         <div className="row">
                           <div className="col-lg-6 col-sm-6 col-12">
                             <div className="solarpanel-box">
                               <div className="solar-icon mb-2">
-                                <img
-                                  src="assets/images/home/solar-icon01.svg"
-                                  alt=""
-                                />
+                                <img src="assets/images/home/solar-icon01.svg" alt="" />
                               </div>
                               <h4 className="text-white">Solar panels</h4>
-                              <p>
-                                Photovoltaic cells convert sunlight into DC
-                                electricity
-                              </p>
+                              <p>Photovoltaic cells convert sunlight into DC electricity</p>
                             </div>
                           </div>
                           <div className="col-lg-6 col-sm-6 col-12">
                             <div className="solarpanel-box">
                               <div className="solar-icon mb-2">
-                                <img
-                                  src="assets/images/home/solar-icon02.svg"
-                                  alt=""
-                                />
+                                <img src="assets/images/home/solar-icon02.svg" alt="" />
                               </div>
                               <h4 className="text-white">Inverter</h4>
                               <p>
-                                DC cuurent flows into the inverter which convert
-                                DC power to AC power...{" "}
+                                DC cuurent flows into the inverter which convert DC power to
+                                AC power...
                               </p>
                             </div>
                           </div>
                           <div className="col-lg-6 col-sm-6 col-12">
                             <div className="solarpanel-box">
                               <div className="solar-icon mb-2">
-                                <img
-                                  src="assets/images/home/solar-icon03.svg"
-                                  alt=""
-                                />
+                                <img src="assets/images/home/solar-icon03.svg" alt="" />
                               </div>
                               <h4 className="text-white">Electric Meter</h4>
                               <p>
-                                AC Power flows from the inverter into the
-                                breaker box, which directs the current to any
-                                ap...{" "}
+                                AC Power flows from the inverter into the breaker box, which
+                                directs the current to any ap...{" "}
                               </p>
                             </div>
                           </div>
                           <div className="col-lg-6 col-sm-6 col-12">
                             <div className="solarpanel-box">
                               <div className="solar-icon mb-2">
-                                <img
-                                  src="assets/images/home/solar-icon04.svg"
-                                  alt=""
-                                />
+                                <img src="assets/images/home/solar-icon04.svg" alt="" />
                               </div>
-                              <h4 className="text-white">
-                                Performance Monitoring
-                              </h4>
+                              <h4 className="text-white">Performance Monitoring</h4>
                               <p>View energy production and usage online.</p>
                             </div>
                           </div>
@@ -336,7 +315,7 @@ const Home = () => {
               </section>
             </Slide>
             <Slide>
-              <section className="section" id="page4">
+              <section className="page4">
                 {/*  Solar Installation Section Start */}
                 <div className="section solar-installation-bg">
                   <div className="container">
@@ -345,29 +324,22 @@ const Home = () => {
                         {/* Section Title Start */}
                         <div className="section-title text-center">
                           <h6 className="mb-2 text-white">Easy process for</h6>
-                          <h2 className="title text-white">
-                            Solar Installation
-                          </h2>
+                          <h2 className="title text-white">Solar Installation</h2>
                         </div>
                         {/* Section Title End */}
                         <div className="row">
                           <div className="col-lg-6 col-md-6 mb-5">
                             <div className="solar-installation-box">
                               <div className="installation-icon">
-                                <img
-                                  src="assets/images/icon/installation-icon01.svg"
-                                  alt=""
-                                />
+                                <img src="assets/images/icon/installation-icon01.svg" alt="" />
                               </div>
                               <div className="installation-text">
                                 <p>
-                                  Call us on 1300 058 561 to arrange a site
-                                  inspection or email us on
-                                  <Link
-                                    target="_blank"
-                                    href="mailto:sales@ozsolarneeds.com.au">
+                                  Call us on 1300 058 561 to arrange a site inspection or
+                                  email us on
+                                  <a target="_blank" href="mailto:sales@ozsolarneeds.com.au">
                                     sales@ozsolarneeds.com.au
-                                  </Link>
+                                  </a>
                                 </p>
                               </div>
                             </div>
@@ -375,16 +347,13 @@ const Home = () => {
                           <div className="col-lg-6 col-md-6 mb-5">
                             <div className="solar-installation-box">
                               <div className="installation-icon">
-                                <img
-                                  src="assets/images/icon/installation-icon02.svg"
-                                  alt=""
-                                />
+                                <img src="assets/images/icon/installation-icon02.svg" alt="" />
                               </div>
                               <div className="installation-text">
                                 <p>
-                                  we will design the solar system to suit your
-                                  needs and discuss the different packages
-                                  option based on your electricity usage.
+                                  we will design the solar system to suit your needs and
+                                  discuss the different packages option based on your
+                                  electricity usage.
                                 </p>
                               </div>
                             </div>
@@ -392,15 +361,12 @@ const Home = () => {
                           <div className="col-lg-6 col-md-6 mb-5">
                             <div className="solar-installation-box">
                               <div className="installation-icon">
-                                <img
-                                  src="assets/images/icon/installation-icon03.svg"
-                                  alt=""
-                                />
+                                <img src="assets/images/icon/installation-icon03.svg" alt="" />
                               </div>
                               <div className="installation-text">
                                 <p>
-                                  We will organize a free site inspection for
-                                  the correct designing of your solar system.
+                                  We will organize a free site inspection for the correct
+                                  designing of your solar system.
                                 </p>
                               </div>
                             </div>
@@ -408,16 +374,13 @@ const Home = () => {
                           <div className="col-lg-6 col-md-6 mb-5">
                             <div className="solar-installation-box">
                               <div className="installation-icon">
-                                <img
-                                  src="assets/images/icon/installation-icon04.svg"
-                                  alt=""
-                                />
+                                <img src="assets/images/icon/installation-icon04.svg" alt="" />
                               </div>
                               <div className="installation-text">
                                 <p>
-                                  Once you selected the system package suit your
-                                  requirements, we will submit your application
-                                  to the electricity distributor.
+                                  Once you selected the system package suit your requirements,
+                                  we will submit your application to the electricity
+                                  distributor.
                                 </p>
                               </div>
                             </div>
@@ -425,16 +388,13 @@ const Home = () => {
                           <div className="col-lg-6 col-md-6 mb-5">
                             <div className="solar-installation-box">
                               <div className="installation-icon">
-                                <img
-                                  src="assets/images/icon/installation-icon05.svg"
-                                  alt=""
-                                />
+                                <img src="assets/images/icon/installation-icon05.svg" alt="" />
                               </div>
                               <div className="installation-text">
                                 <p>
-                                  After your application has been approved by
-                                  the distributor we will contact you to
-                                  organize the date and time of installation.
+                                  After your application has been approved by the distributor
+                                  we will contact you to organize the date and time of
+                                  installation.
                                 </p>
                               </div>
                             </div>
@@ -442,16 +402,12 @@ const Home = () => {
                           <div className="col-lg-6 col-md-6 mb-5">
                             <div className="solar-installation-box">
                               <div className="installation-icon">
-                                <img
-                                  src="assets/images/icon/installation-icon06.svg"
-                                  alt=""
-                                />
+                                <img src="assets/images/icon/installation-icon06.svg" alt="" />
                               </div>
                               <div className="installation-text">
                                 <p>
-                                  The final stage would involve the replacement
-                                  of the utility meter, which is normally
-                                  organized by the customer.
+                                  The final stage would involve the replacement of the utility
+                                  meter, which is normally organized by the customer.
                                 </p>
                               </div>
                             </div>
@@ -464,6 +420,7 @@ const Home = () => {
                 </div>
                 {/*  Solar Installation Section End */}
               </section>
+
             </Slide>
             <Slide>
               <section className="section" id="page5">
