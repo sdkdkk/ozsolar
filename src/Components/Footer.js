@@ -20,7 +20,7 @@ const Footer = () => {
               </div>
               {/* Footer Logo End */}
               {/* Contact Info Start */}
-              {/* <div class="contact-info">AB Road XX, AB Floor, New York, AA 123456 <br> <Link href="tel:+012-345-6789-00">(+012) 345-6789-00</Link> <br> <Link href="mailto:hello@consulte.co">hello@consulte.co</Link></div> */}
+              {/* <div class="contact-info">AB Road XX, AB Floor, New York, AA 123456 <br> <Link to="tel:+012-345-6789-00">(+012) 345-6789-00</Link> <br> <Link to="mailto:hello@consulte.co">hello@consulte.co</Link></div> */}
               {/* Contact Info End */}
             </div>
             <div className="col-lg-3">
@@ -28,22 +28,22 @@ const Footer = () => {
               {/* Footer Nav Start */}
               <ul className="footer-nav">
                 <li>
-                  <Link href="/about">About</Link>
+                  <Link to="/about">About</Link>
                 </li>
                 <li>
-                  <Link href="/gallary">Gallery</Link>
+                  <Link to="/gallary">Gallery</Link>
                 </li>
                 <li>
-                  <Link href="/contact">Contact</Link>
+                  <Link to="/contact">Contact</Link>
                 </li>
                 <li>
-                  <Link href="/consumer">Consumer Guide</Link>
+                  <Link to="/consumer">Consumer Guide</Link>
                 </li>
                 <li>
-                  <Link href="/inverter">Inverter</Link>
+                  <Link to="/inverter">Inverter</Link>
                 </li>
                 <li>
-                  <Link href="/panels">Panels</Link>
+                  <Link to="/panels">Panels</Link>
                 </li>
               </ul>
               {/* Footer Nav End */}
@@ -53,13 +53,13 @@ const Footer = () => {
               {/* Footer Nav Start */}
               <ul className="footer-nav">
                 <li>
-                  <Link href="#">Humm</Link>
+                  <Link to="#">Humm</Link>
                 </li>
                 <li>
-                  <Link href="#"> Brighte</Link>
+                  <Link to="#"> Brighte</Link>
                 </li>
                 <li>
-                  <Link href="#">Zip Pay</Link>
+                  <Link to="#">Zip Pay</Link>
                 </li>
               </ul>
               {/* Footer Nav End */}
@@ -69,13 +69,13 @@ const Footer = () => {
               {/* Footer Social Icons Start */}
               <ul className="footer-social-icons social-media-link">
                 <li>
-                  <Link href="#" className="icofont-facebook" />
+                  <Link to="#" className="icofont-facebook" />
                 </li>
                 <li>
-                  <Link href="#" className="icofont-twitter" />
+                  <Link to="#" className="icofont-twitter" />
                 </li>
                 <li>
-                  <Link href="#" className="icofont-whatsapp" />
+                  <Link to="#" className="icofont-whatsapp" />
                 </li>
               </ul>
               {/* Footer Social Icons End */}
@@ -93,7 +93,7 @@ const Footer = () => {
               {/* Copyright Start */}
               <div className="copyright text-end">
                 Website Designed by:{" "}
-                <Link target="_blank" href="https://www.setblue.com/">
+                <Link target="_blank" to="https://www.setblue.com/">
                   Setblue
                 </Link>
               </div>
