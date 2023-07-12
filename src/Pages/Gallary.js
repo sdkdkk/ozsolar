@@ -3,6 +3,7 @@ import Footer from "../Components/Footer";
 import "magnific-popup/dist/magnific-popup.css";
 import $ from "jquery";
 import "magnific-popup/dist/jquery.magnific-popup";
+import 'magnific-popup';
 
 const GalleryComponent = () => {
 

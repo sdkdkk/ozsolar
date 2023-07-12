@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+
   const [ActiveLink, setActiveLink] = useState("");
   const location = useLocation();
 
@@ -18,13 +19,14 @@ const Navbar = () => {
     localStorage.setItem("activeLink", link);
   };
 
-  const [dropdownOpen, setDropdownOpen] = useState({
-    panels: false,
-    inverter: false,
-    packages: false,
-  });
+  const [FirstdropdownOpen, setFirstDropdownOpen] = useState(false);
+  const handleDropdownToggle = () => setFirstDropdownOpen(!FirstdropdownOpen);
 
-  const handleDropdownToggle = () => setDropdownOpen(!dropdownOpen);
+  const [SecondDropdown, setSecondDropdown] = useState(false);
+  const DropdownToggle = () => setSecondDropdown(!SecondDropdown);
+
+  const [ThirdDropdown, setThirdDropdown] = useState(false);
+  const LastDropdownToggle = () => setThirdDropdown(!ThirdDropdown)
 
 
 
@@ -230,63 +232,69 @@ const Navbar = () => {
                     <Link to="/about">About</Link>
                   </li>
                   <li className="has-children">
-                    <Link to="/panels">
+                    <Link to="/panels" onClick={handleDropdownToggle}>
                       Panels{" "}
-                      <i className="icofont-rounded-down" aria-hidden="true" />
+                      <i className={`icofont-rounded-${FirstdropdownOpen ? 'up' : 'down'}`} aria-hidden="true" />
                     </Link>
-                    <ul className="dropdown">
-                      <li>
-                        <Link to="#">Q-Cells Panels</Link>
-                      </li>
-                      <li>
-                        <Link to="#">Canadian Solar</Link>
-                      </li>
-                      <li>
-                        <Link to="#">LG Panels</Link>
-                      </li>
-                      <li>
-                        <Link to="#">Jinko</Link>
-                      </li>
-                    </ul>
+                    {FirstdropdownOpen && (
+                      <ul className="dropdown">
+                        <li>
+                          <Link to="#">Q-Cells Panels</Link>
+                        </li>
+                        <li>
+                          <Link to="#">Canadian Solar</Link>
+                        </li>
+                        <li>
+                          <Link to="#">LG Panels</Link>
+                        </li>
+                        <li>
+                          <Link to="#">Jinko</Link>
+                        </li>
+                      </ul>
+                    )}
                   </li>
                   <li className="has-children">
                     <Link
                       to="/inverter"
-                      onClick={() => handleDropdownToggle("inverter")}>
+                      onClick={DropdownToggle}>
                       Inverter{" "}
-                      <i className="icofont-rounded-down" aria-hidden="true" />
+                      <i className={`icofont-rounded-${SecondDropdown ? 'up' : 'down'}`} aria-hidden="true" />
                     </Link>
-                    <ul className="dropdown">
-                      <li>
-                        <Link to="#">Fronius</Link>
-                      </li>
-                      <li>
-                        <Link to="#">ABB</Link>
-                      </li>
-                      <li>
-                        <Link to="#">SMA </Link>
-                      </li>
-                      <li>
-                        <Link to="#">Growatt </Link>
-                      </li>
-                      <li>
-                        <Link to="#">Sungrow</Link>
-                      </li>
-                    </ul>
+                    {
+                      SecondDropdown && <ul className="dropdown">
+                        <li>
+                          <Link to="#">Fronius</Link>
+                        </li>
+                        <li>
+                          <Link to="#">ABB</Link>
+                        </li>
+                        <li>
+                          <Link to="#">SMA </Link>
+                        </li>
+                        <li>
+                          <Link to="#">Growatt </Link>
+                        </li>
+                        <li>
+                          <Link to="#">Sungrow</Link>
+                        </li>
+                      </ul>
+                    }
                   </li>
                   <li className="has-children">
-                    <Link to="/packages">
+                    <Link onClick={LastDropdownToggle} to="/packages">
                       Packages{" "}
-                      <i className="icofont-rounded-down" aria-hidden="true" />
+                      <i className={`icofont-rounded-${ThirdDropdown ? 'up' : 'down'}`} aria-hidden="true" />
                     </Link>
-                    <ul className="dropdown">
-                      <li>
-                        <Link to="#">Residential</Link>
-                      </li>
-                      <li>
-                        <Link to="#">Commercial</Link>
-                      </li>
-                    </ul>
+                    {
+                      ThirdDropdown && <ul className="dropdown">
+                        <li>
+                          <Link to="#">Residential</Link>
+                        </li>
+                        <li>
+                          <Link to="#">Commercial</Link>
+                        </li>
+                      </ul>
+                    }
                   </li>
                   <li>
                     <Link to="/gallary">Gallery</Link>
