@@ -4,6 +4,7 @@ import "magnific-popup/dist/magnific-popup.css";
 import $ from "jquery";
 import "magnific-popup/dist/jquery.magnific-popup";
 import 'magnific-popup';
+import ScrollToTop from "../Components/ScrollToTop";
 
 const GalleryComponent = () => {
 
@@ -67,11 +68,9 @@ const GalleryComponent = () => {
                                     <a
                                         className="image"
                                         href="assets/images/gallery/2.jpg"
-                                        data-magnific="image">
-                                        <img
-                                            src="assets/images/gallery/2.jpg"
-                                            alt=""
-                                        />
+                                        data-magnific="image"
+                                    >
+                                        <img src="assets/images/gallery/2.jpg" alt="project Image" />
                                     </a>
                                 </div>
                             </div>
@@ -84,11 +83,9 @@ const GalleryComponent = () => {
                                     <a
                                         className="image"
                                         href="assets/images/gallery/3.jpg"
-                                        data-magnific="image">
-                                        <img
-                                            src="assets/images/gallery/3.jpg"
-                                            alt=""
-                                        />
+                                        data-magnific="image"
+                                    >
+                                        <img src="assets/images/gallery/3.jpg" alt="project Image" />
                                     </a>
                                 </div>
                             </div>
@@ -101,11 +98,9 @@ const GalleryComponent = () => {
                                     <a
                                         className="image"
                                         href="assets/images/gallery/4.jpg"
-                                        data-magnific="image">
-                                        <img
-                                            src="assets/images/gallery/4.jpg"
-                                            alt=""
-                                        />
+                                        data-magnific="image"
+                                    >
+                                        <img src="assets/images/gallery/4.jpg" alt="project Image" />
                                     </a>
                                 </div>
                             </div>
@@ -118,11 +113,9 @@ const GalleryComponent = () => {
                                     <a
                                         className="image"
                                         href="assets/images/gallery/5.jpg"
-                                        data-magnific="image">
-                                        <img
-                                            src="assets/images/gallery/5.jpg"
-                                            alt=""
-                                        />
+                                        data-magnific="image"
+                                    >
+                                        <img src="assets/images/gallery/5.jpg" alt="project Image" />
                                     </a>
                                 </div>
                             </div>
@@ -135,11 +128,9 @@ const GalleryComponent = () => {
                                     <a
                                         className="image"
                                         href="assets/images/gallery/6.jpg"
-                                        data-magnific="image">
-                                        <img
-                                            src="assets/images/gallery/6.jpg"
-                                            alt=""
-                                        />
+                                        data-magnific="image"
+                                    >
+                                        <img src="assets/images/gallery/6.jpg" alt="project Image" />
                                     </a>
                                 </div>
                             </div>
@@ -152,11 +143,9 @@ const GalleryComponent = () => {
                                     <a
                                         className="image"
                                         href="assets/images/gallery/7.jpg"
-                                        data-magnific="image">
-                                        <img
-                                            src="assets/images/gallery/7.jpg"
-                                            alt=""
-                                        />
+                                        data-magnific="image"
+                                    >
+                                        <img src="assets/images/gallery/7.jpg" alt="project Image" />
                                     </a>
                                 </div>
                             </div>
@@ -169,11 +158,9 @@ const GalleryComponent = () => {
                                     <a
                                         className="image"
                                         href="assets/images/gallery/8.jpg"
-                                        data-magnific="image">
-                                        <img
-                                            src="assets/images/gallery/8.jpg"
-                                            alt=""
-                                        />
+                                        data-magnific="image"
+                                    >
+                                        <img src="assets/images/gallery/8.jpg" alt="project Image" />
                                     </a>
                                 </div>
                             </div>
@@ -186,11 +173,9 @@ const GalleryComponent = () => {
                                     <a
                                         className="image"
                                         href="assets/images/gallery/9.jpg"
-                                        data-magnific="image">
-                                        <img
-                                            src="assets/images/gallery/9.jpg"
-                                            alt=""
-                                        />
+                                        data-magnific="image"
+                                    >
+                                        <img src="assets/images/gallery/9.jpg" alt="project Image" />
                                     </a>
                                 </div>
                             </div>
@@ -203,11 +188,9 @@ const GalleryComponent = () => {
                                     <a
                                         className="image"
                                         href="assets/images/gallery/10.jpg"
-                                        data-magnific="image">
-                                        <img
-                                            src="assets/images/gallery/10.jpg"
-                                            alt=""
-                                        />
+                                        data-magnific="image"
+                                    >
+                                        <img src="assets/images/gallery/10.jpg" alt="project Image" />
                                     </a>
                                 </div>
                             </div>
@@ -274,6 +257,10 @@ const GalleryComponent = () => {
                 </div>
             </div>
             <Footer />
+
+            {/* Scroll Top Start */}
+            <ScrollToTop />
+            {/* Scroll Top End */}
         </>
     );
 };
