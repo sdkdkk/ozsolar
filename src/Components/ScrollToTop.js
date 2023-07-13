@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaArrowUp } from 'react-icons/fa';
+import { IoIosArrowDropupCircle } from 'react-icons/io';
 
 const ScrollToTop = () => {
 
@@ -8,7 +8,6 @@ const ScrollToTop = () => {
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-        setShowButton(false);
     };
 
     const listenToScroll = () => {
@@ -34,8 +33,8 @@ const ScrollToTop = () => {
         <>
             {
                 showButton && <div className="right text-end fixed-bottom" style={{ margin: '10px' }}>
-                    <button type="button" className="btn btn-danger rounded-5" onClick={scrollToTop}>
-                        <FaArrowUp className="AiOutlineArrowUp" />
+                    <button type="button" className="btn btn-warning" onClick={scrollToTop}>
+                        <IoIosArrowDropupCircle size={30} color="white" />
                     </button>
                 </div>
             }
