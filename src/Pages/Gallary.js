@@ -15,7 +15,7 @@ const GalleryComponent = () => {
                 enabled: true,
             },
         });
-    });
+    }, []);
 
     return (
         <>

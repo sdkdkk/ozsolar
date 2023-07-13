@@ -8,9 +8,6 @@ import Footer from "../Components/Footer";
 
 const Home = () => {
 
-
-
-
   useEffect(() => {
     new Swiper(".swiper-container", {
       slidesPerView: 1,

@@ -26,7 +26,7 @@ const Navbar = () => {
   const DropdownToggle = () => setSecondDropdown(!SecondDropdown);
 
   const [ThirdDropdown, setThirdDropdown] = useState(false);
-  const LastDropdownToggle = () => setThirdDropdown(!ThirdDropdown)
+  const LastDropdownToggle = () => setThirdDropdown(!ThirdDropdown);
 
 
 
