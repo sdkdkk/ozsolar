@@ -5,6 +5,7 @@ import Odometer from "react-odometerjs";
 import "odometer/themes/odometer-theme-default.css";
 import "odometer/themes/odometer-theme-default.css";
 import Swiper from "swiper";
+import ScrollToTop from "../Components/ScrollToTop";
 
 
 const About = () => {
@@ -499,17 +500,14 @@ const About = () => {
             </div>
           </div>
         </div>
-
         <Footer />
         {/* End Main Footer */}
-        {/* Scroll Top Start */}
-        <Link href="#" className="scroll-top" id="scroll-top">
-          <i className="arrow-top icofont-circled-up" />
-          <i className="arrow-bottom icofont-circled-up" />
-        </Link>
-        {/* Scroll Top End */}
       </div>
       {/* Project Banner Section Start */}
+
+      {/* Scroll Top Start */}
+      <ScrollToTop />
+      {/* Scroll Top End */}
     </>
   );
 };
