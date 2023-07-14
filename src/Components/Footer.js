@@ -58,13 +58,25 @@ const Footer = () => {
               <h4 className="footer-title">Follow Us</h4>
               <ul className="footer-social-icons social-media-link">
                 <li>
-                  <Link to="#" className="icofont-facebook" />
+                  <Link
+                    to="https://www.facebook.com/OZSOLARNEEDS"
+                    className="icofont-facebook"
+                    target="_blank"
+                  />
                 </li>
                 <li>
-                  <Link to="#" className="icofont-twitter" />
+                  <Link
+                    to="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin%3Flang%3Den"
+                    className="icofont-twitter"
+                    target="_blank"
+                  />
                 </li>
                 <li>
-                  <Link to="#" className="icofont-whatsapp" />
+                  <Link
+                    to="https://api.whatsapp.com/send/?phone=61430305960&text&type=phone_number&app_absent=0"
+                    className="icofont-whatsapp"
+                    target="_blank"
+                  />
                 </li>
               </ul>
             </div>
