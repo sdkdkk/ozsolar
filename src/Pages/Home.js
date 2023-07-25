@@ -253,7 +253,7 @@ const Home = () => {
                 <div className="section solarpanel-works-bg">
                   <div className="container-fluid">
                     <div className="row">
-                      <div className="col-lg-6 align-items-center solar-left-box" style={{background:"rgb(0 0 0 / 42%)"}}>
+                      <div className="col-lg-6 align-items-center solar-left-box" style={{ background: "rgb(0 0 0 / 42%)" }}>
                         {/* Section Title Start */}
                         <div className="section-title text-center">
                           <h2 className="title text-white">How Solar Panel Works?</h2>
