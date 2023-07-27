@@ -20,7 +20,8 @@ function App() {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/panels" element={<Panels />} />
           <Route exact path="/inverter" element={<Inverter />} />
-          <Route exact path="/packages" element={<Packages />} />
+          <Route path="/residential" element={<Packages />} />
+          <Route path="/commercial" element={<Packages />} />
           <Route exact path="/gallary" element={<Gallary />} />
           <Route exact path="/finance" element={<Finance />} />
           <Route exact path="/contact" element={<Contact />} />

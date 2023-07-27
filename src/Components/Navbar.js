@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-
   const [ActiveLink, setActiveLink] = useState("");
   const location = useLocation();
 
@@ -27,9 +26,6 @@ const Navbar = () => {
 
   const [ThirdDropdown, setThirdDropdown] = useState(false);
   const LastDropdownToggle = () => setThirdDropdown(!ThirdDropdown);
-
-
-
 
   return (
     <>
@@ -122,19 +118,19 @@ const Navbar = () => {
                         </li>
                         <li>
                           <Link
-                            className={
-                              ActiveLink === "/packages" ? "active" : ""
-                            }
-                            to="/packages"
-                            onClick={() => handleMenuItemClick("/packages")}>
+                            className={ActiveLink === "#" ? "active" : ""}
+                            to="#"
+                            onClick={() => handleMenuItemClick("#")}>
                             Packages
                           </Link>
                           <ul className="submenu">
                             <li>
-                              <Link to="#">Residential</Link>
+                              <Link to="/residential">Residential</Link>
                             </li>
                             <li>
-                              <Link to="#">Commercial</Link>
+                              <Link to="/commercial">
+                                Commercial
+                              </Link>
                             </li>
                           </ul>
                         </li>
@@ -234,7 +230,12 @@ const Navbar = () => {
                   <li className="has-children">
                     <Link to="/panels" onClick={handleDropdownToggle}>
                       Panels{" "}
-                      <i className={`icofont-rounded-${FirstdropdownOpen ? 'up' : 'down'}`} aria-hidden="true" />
+                      <i
+                        className={`icofont-rounded-${
+                          FirstdropdownOpen ? "up" : "down"
+                        }`}
+                        aria-hidden="true"
+                      />
                     </Link>
                     {FirstdropdownOpen && (
                       <ul className="dropdown">
@@ -254,14 +255,17 @@ const Navbar = () => {
                     )}
                   </li>
                   <li className="has-children">
-                    <Link
-                      to="/inverter"
-                      onClick={DropdownToggle}>
+                    <Link to="/inverter" onClick={DropdownToggle}>
                       Inverter{" "}
-                      <i className={`icofont-rounded-${SecondDropdown ? 'up' : 'down'}`} aria-hidden="true" />
+                      <i
+                        className={`icofont-rounded-${
+                          SecondDropdown ? "up" : "down"
+                        }`}
+                        aria-hidden="true"
+                      />
                     </Link>
-                    {
-                      SecondDropdown && <ul className="dropdown">
+                    {SecondDropdown && (
+                      <ul className="dropdown">
                         <li>
                           <Link to="#">Fronius</Link>
                         </li>
@@ -278,15 +282,20 @@ const Navbar = () => {
                           <Link to="#">Sungrow</Link>
                         </li>
                       </ul>
-                    }
+                    )}
                   </li>
                   <li className="has-children">
                     <Link onClick={LastDropdownToggle} to="/packages">
                       Packages{" "}
-                      <i className={`icofont-rounded-${ThirdDropdown ? 'up' : 'down'}`} aria-hidden="true" />
+                      <i
+                        className={`icofont-rounded-${
+                          ThirdDropdown ? "up" : "down"
+                        }`}
+                        aria-hidden="true"
+                      />
                     </Link>
-                    {
-                      ThirdDropdown && <ul className="dropdown">
+                    {ThirdDropdown && (
+                      <ul className="dropdown">
                         <li>
                           <Link to="#">Residential</Link>
                         </li>
@@ -294,7 +303,7 @@ const Navbar = () => {
                           <Link to="#">Commercial</Link>
                         </li>
                       </ul>
-                    }
+                    )}
                   </li>
                   <li>
                     <Link to="/gallary">Gallery</Link>

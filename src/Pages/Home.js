@@ -77,21 +77,25 @@ const Home = () => {
 
     return (
       <>
-        {Array(fullStars).fill(
-          <i
-            className="fas fa-star"
-            key={`star-${stars}-full-${fullStars}`}
-            style={starStyle}
-          />
-        )}
+        {Array(fullStars)
+          .fill()
+          .map((_, index) => (
+            <i
+              className="fas fa-star"
+              key={`star-${stars}-full-${index}`} // Now the key includes the index
+              style={starStyle}
+            />
+          ))}
         {halfStar && <i className="fas fa-star-half-alt" style={starStyle} />}
-        {Array(emptyStars).fill(
-          <i
-            className="far fa-star"
-            key={`star-${stars}-empty-${emptyStars}`}
-            style={starStyle}
-          />
-        )}
+        {Array(emptyStars)
+          .fill()
+          .map((_, index) => (
+            <i
+              className="far fa-star"
+              key={`star-${stars}-empty-${index}`} // Now the key includes the index
+              style={starStyle}
+            />
+          ))}
       </>
     );
   }
@@ -826,7 +830,7 @@ const Home = () => {
                             <i className="icofont-email" />
                             <p>
                               <strong>Email</strong>
-                              <br />{" "}
+                              <br />
                               <Link
                                 target="_blank"
                                 href="mailto:sales@ozsolarneeds.com.au">
