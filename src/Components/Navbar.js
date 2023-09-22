@@ -1,13 +1,14 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ setavtivedata, setavtivemenu }) => {
   const [ActiveLink, setActiveLink] = useState("");
   const location = useLocation();
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const handleMobileMenuToggle = () => setMobileMenuOpen(!isMobileMenuOpen);
-
+  console.log(location);
   useEffect(() => {
     const storedActiveLink = localStorage.getItem("activeLink");
     setActiveLink(storedActiveLink || location.pathname);
@@ -18,6 +19,7 @@ const Navbar = () => {
     localStorage.setItem("activeLink", link);
   };
 
+  const [data, setdata] = useState([]);
   const [FirstdropdownOpen, setFirstDropdownOpen] = useState(false);
   const handleDropdownToggle = () => setFirstDropdownOpen(!FirstdropdownOpen);
 
@@ -26,7 +28,28 @@ const Navbar = () => {
 
   const [ThirdDropdown, setThirdDropdown] = useState(false);
   const LastDropdownToggle = () => setThirdDropdown(!ThirdDropdown);
+  useEffect(() => {
+    getdata();
+  }, []);
+  const getdata = async () => {
+    try {
+      let headersList = {
+        Accept: "*/*",
+      };
 
+      let reqOptions = {
+        url: "http://localhost:5000/api/admin/cmsall",
+        method: "GET",
+        headers: headersList,
+      };
+
+      let response = await axios.request(reqOptions);
+      setdata(response.data.document);
+    } catch (error) {}
+  };
+  data.sort((a, b) => {
+    return a.sortOrder - b.sortOrder;
+  });
   return (
     <>
       {/* Header Section Start */}
@@ -42,7 +65,12 @@ const Navbar = () => {
                     <Link
                       className={ActiveLink === "/" ? "active" : ""}
                       to="/"
-                      onClick={() => handleMenuItemClick("/")}>
+                      onClick={() => {
+                        handleMenuItemClick("/");
+                        setavtivemenu("");
+                        setavtivedata(0);
+                      }}
+                    >
                       <img
                         className="fit-image"
                         src="assets/images/logo/logo-black.png"
@@ -58,20 +86,77 @@ const Navbar = () => {
                     {/* Main Menu Start */}
                     <nav className="main-menu main-menu-white">
                       <ul>
-                        <li>
+                        {data.map((el, i) => {
+                          return (
+                            <li key={i}>
+                              {!el?.result?.length > 0 ? (
+                                <Link
+                                  className={
+                                    ActiveLink === "/" + el.name ? "active" : ""
+                                  }
+                                  to={"/" + el.name}
+                                  onClick={() => {
+                                    handleMenuItemClick("/" + el.name);
+                                    setavtivemenu("");
+                                    setavtivedata(0);
+                                  }}
+                                >
+                                  {el.name}
+                                </Link>
+                              ) : (
+                                <Link
+                                  className={
+                                    ActiveLink === "/" + el.name ? "active" : ""
+                                  }
+                                  onClick={() => {
+                                    handleMenuItemClick("/" + el.name);
+                                    setavtivemenu("");
+                                    setavtivedata(0);
+                                  }}
+                                >
+                                  {el.name}
+                                </Link>
+                              )}
+                              {el?.result?.length > 0 && (
+                                <ul className="submenu">
+                                  {el.result.map((e, i) => {
+                                    return (
+                                      <li key={i}>
+                                        <Link
+                                          to={"/" + el.name + "/?" + e.title}
+                                          onClick={() => {
+                                            handleMenuItemClick(e.title);
+                                            setavtivemenu(e.title);
+                                            setavtivedata(0);
+                                          }}
+                                        >
+                                          {e.title}
+                                        </Link>
+                                      </li>
+                                    );
+                                  })}
+                                </ul>
+                              )}
+                            </li>
+                          );
+                        })}
+                        {/* <li>
                           <Link
                             className={ActiveLink === "/about" ? "active" : ""}
                             to="/about"
-                            onClick={() => handleMenuItemClick("/about")}>
+                            onClick={() => handleMenuItemClick("/about")}
+                          >
                             About
                           </Link>
                         </li>
                         <li
-                          className={ActiveLink === "/panels" ? "active" : ""}>
+                          className={ActiveLink === "/panels" ? "active" : ""}
+                        >
                           <Link
                             className={ActiveLink === "/panels" ? "active" : ""}
                             to="/panels"
-                            onClick={() => handleMenuItemClick("/panels")}>
+                            onClick={() => handleMenuItemClick("/panels")}
+                          >
                             Panels
                           </Link>
                           <ul className="submenu">
@@ -95,7 +180,8 @@ const Navbar = () => {
                               ActiveLink === "/inverter" ? "active" : ""
                             }
                             to="/inverter"
-                            onClick={() => handleMenuItemClick("/inverter")}>
+                            onClick={() => handleMenuItemClick("/inverter")}
+                          >
                             Inverter
                           </Link>
                           <ul className="submenu">
@@ -120,7 +206,8 @@ const Navbar = () => {
                           <Link
                             className={ActiveLink === "#" ? "active" : ""}
                             to="#"
-                            onClick={() => handleMenuItemClick("#")}>
+                            onClick={() => handleMenuItemClick("#")}
+                          >
                             Packages
                           </Link>
                           <ul className="submenu">
@@ -128,9 +215,7 @@ const Navbar = () => {
                               <Link to="/residential">Residential</Link>
                             </li>
                             <li>
-                              <Link to="/commercial">
-                                Commercial
-                              </Link>
+                              <Link to="/commercial">Commercial</Link>
                             </li>
                           </ul>
                         </li>
@@ -140,7 +225,8 @@ const Navbar = () => {
                               ActiveLink === "/gallary" ? "active" : ""
                             }
                             to="/gallary"
-                            onClick={() => handleMenuItemClick("/gallary")}>
+                            onClick={() => handleMenuItemClick("/gallary")}
+                          >
                             Gallery
                           </Link>
                         </li>
@@ -150,7 +236,8 @@ const Navbar = () => {
                               ActiveLink === "/finance" ? "active" : ""
                             }
                             to="/finance"
-                            onClick={() => handleMenuItemClick("/finance")}>
+                            onClick={() => handleMenuItemClick("/finance")}
+                          >
                             Finance Options
                           </Link>
                         </li>
@@ -160,7 +247,8 @@ const Navbar = () => {
                               ActiveLink === "/contact" ? "active" : ""
                             }
                             to="/contact"
-                            onClick={() => handleMenuItemClick("/contact")}>
+                            onClick={() => handleMenuItemClick("/contact")}
+                          >
                             Contacts
                           </Link>
                         </li>
@@ -170,10 +258,11 @@ const Navbar = () => {
                               ActiveLink === "/consumer" ? "active" : ""
                             }
                             to="/consumer"
-                            onClick={() => handleMenuItemClick("/consumer")}>
+                            onClick={() => handleMenuItemClick("/consumer")}
+                          >
                             Consumer Guide
                           </Link>
-                        </li>
+                        </li> */}
                       </ul>
                     </nav>
                     {/* Main Menu End */}
@@ -200,7 +289,8 @@ const Navbar = () => {
         {/* Header Top End */}
         {/* Mobile Menu Start */}
         <div
-          className={`mobile-menu-wrapper ${isMobileMenuOpen ? "open" : ""}`}>
+          className={`mobile-menu-wrapper ${isMobileMenuOpen ? "open" : ""}`}
+        >
           <div className="offcanvas-overlay" />
           {/* Mobile Menu Inner Start */}
           <div className="mobile-menu-inner">
@@ -214,7 +304,8 @@ const Navbar = () => {
               {/* Button Close Start */}
               <div
                 className="offcanvas-btn-close"
-                onClick={handleMobileMenuToggle}>
+                onClick={handleMobileMenuToggle}
+              >
                 <i className="icofont-close-line" />
               </div>
               {/* Button Close End */}

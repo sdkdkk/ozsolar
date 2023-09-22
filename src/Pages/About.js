@@ -6,11 +6,13 @@ import "odometer/themes/odometer-theme-default.css";
 import "odometer/themes/odometer-theme-default.css";
 import Swiper from "swiper";
 import ScrollToTop from "../Components/ScrollToTop";
+import Slider from "react-slick";
+import axios from "axios";
 
-
-const About = () => {
+const About = ({ banars }) => {
   const [odometerValue, setOdometerValue] = useState(0);
   const [odometerValue1, setOdometerValue1] = useState();
+  const [CustomerReviews, setCustomerReviews] = useState([]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -18,83 +20,116 @@ const About = () => {
       setOdometerValue1(45000);
     }, 1000);
   }, []);
-
   useEffect(() => {
-    const swiper = new Swiper('.swiper-container', {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      navigation: {
-        prevEl: '.client-crousel-prev',
-        nextEl: '.client-crousel-next',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 20
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 30
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 30
-        },
-      },
-    });
-
-    const prevButton = document.querySelector('.client-crousel-prev');
-    const nextButton = document.querySelector('.client-crousel-next');
-
-    prevButton.addEventListener('click', () => {
-      swiper.slidePrev();
-    });
-
-    nextButton.addEventListener('click', () => {
-      swiper.slideNext();
-    });
-
-    return () => {
-      prevButton.removeEventListener('click', () => {
-        swiper.slidePrev();
-      });
-
-      nextButton.removeEventListener('click', () => {
-        swiper.slideNext();
-      });
-    };
+    getCustomer();
   }, []);
+  const getCustomer = async () => {
+    let reqOptions = {
+      url: "http://localhost:5000/api/admin/testimonialall",
+      method: "GET",
+    };
 
+    let response = await axios.request(reqOptions);
+    setCustomerReviews(response.data.document);
+  };
+  function renderStars(stars, color) {
+    const totalStars = 5; // Assuming 5 is the maximum number of stars
+    const fullStars = Math.floor(stars);
+    const halfStar = stars - fullStars >= 0.5;
+    const emptyStars = totalStars - fullStars - (halfStar ? 1 : 0);
 
+    const starStyle = { color: color };
 
-
-
+    return (
+      <>
+        {Array(fullStars)
+          .fill()
+          .map((_, index) => (
+            <i
+              className="fas fa-star"
+              key={`star-${stars}-full-${index}`} // Now the key includes the index
+              style={starStyle}
+            />
+          ))}
+        {halfStar && <i className="fas fa-star-half-alt" style={starStyle} />}
+        {Array(emptyStars)
+          .fill()
+          .map((_, index) => (
+            <i
+              className="far fa-star"
+              key={`star-${stars}-empty-${index}`} // Now the key includes the index
+              style={starStyle}
+            />
+          ))}
+      </>
+    );
+  }
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    infinite: true,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    arrow: !true,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          autoplay: true,
+          arrow: !true,
+          speed: 2000,
+          autoplaySpeed: 2000,
+          cssEase: "linear",
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2,
+          infinite: true,
+          arrow: !true,
+          autoplay: true,
+          speed: 2000,
+          autoplaySpeed: 2000,
+          cssEase: "linear",
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2,
+          arrow: !true,
+          infinite: true,
+          autoplay: true,
+          speed: 2000,
+          autoplaySpeed: 2000,
+          cssEase: "linear",
+          dots: true,
+        },
+      },
+    ],
+  };
+  CustomerReviews.sort((a, b) => {
+    return a.sortOrder - b.sortOrder;
+  });
   return (
     <>
       <div className=" disabled-onepage-scroll">
-        <div
-          className="section about-banner-image"
-          style={{
-            backgroundImage: "url(assets/images/about/large-about.jpg)",
-          }}>
-          <div className="container">
-            <div className="row">
-              <div className="content">
-                <div>
-                  <h1 className="title">About OZ</h1>
-                  <h5 className="text-white">
-                    We would love to advice you on your solar needs.
-                  </h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* about Section Start */}
         <div className="section section-padding-top section-padding-bottom">
           <div className="container">
             <div className="row mb-n10">
@@ -306,201 +341,44 @@ const About = () => {
         </div>
         {/* Services Section End */}
         {/* Customer’s review Section Start */}
-        <div className="section section-padding-top section-padding-bottom">
-          <div className="container">
-            <div className="row">
-              <div className="col-12 position-relative">
-                <div className="section-title client-title">
-                  <h2 className="title">Customer’s review</h2>
-                  <p className="mt-1">What they say about us</p>
-                </div>
-                <div className="client-crousel">
-                  <div className="swiper-container">
-                    <div className="swiper-wrapper">
-                      <div className="swiper-slide">
-                        {/* Single Client Start */}
-                        <div className="single-client-wrapper">
-                          {/* Client Thumb Icon Start */}
-                          <div className="client-thumb-icon">
-                            <div className="thumb">
-                              <img
-                                src="assets/images/home/review.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                          {/* Client Thumb Icon End */}
-                          {/* Client Content Start */}
-                          <div className="client-content">
-                            {/* Name End */}
-                            <p>
-                              We, the Hooper Taxation Services Pty Ltd, (Ken and
-                              Dionesia Goebel) would like to thank you “Oz Solar
-                              Needs” for your unbelievable, professional, honest,
-                              friendly and reliable service. You did an amazing job
-                              for our business and residential. What admire and
-                              amaze us the most is Jimmy’s unconditional helping
-                              hand and friendly advices.
-                            </p>
-                            {/* Name Start */}
-                            <h6 className="name">
-                              <Link href="#">
-                                Ken and Dionesia Goebel | Laidley Heights
-                              </Link>
-                            </h6>
-                            <Link href="#"></Link>
-                          </div>
-                          <Link href="#">{/* Client Content End */}</Link>
-                        </div>
-                        <Link href="#">{/* Single Client End */}</Link>
-                      </div>
-                      <Link href="#"></Link>
-                      <div className="swiper-slide">
-                        <Link href="#">{/* Single Client Start */}</Link>
-                        <div className="single-client-wrapper">
-                          <Link href="#">
-                            {/* Client Thumb Icon Start */}
-                            <div className="client-thumb-icon">
-                              <div className="thumb">
-                                <img
-                                  src="assets/images/home/review.png"
-                                  alt=""
-                                />
-                              </div>
-                            </div>
-                            {/* Client Thumb Icon End */}
-                            {/* Client Content Start */}
-                          </Link>
-                          <div className="client-content">
-                            <Link href="#">
-                              {/* Name End */}
-                              <p>
-                                We, the Hooper Taxation Services Pty Ltd, (Ken and
-                                Dionesia Goebel) would like to thank you “Oz Solar
-                                Needs” for your unbelievable, professional, honest,
-                                friendly and reliable service. You did an amazing
-                                job for our business and residential. What admire
-                                and amaze us the most is Jimmy’s unconditional
-                                helping hand and friendly advices.
-                              </p>
-                              {/* Name Start */}
-                            </Link>
-                            <h6 className="name">
-                              <Link href="#"></Link>
-                              <Link href="#">
-                                Ken and Dionesia Goebel | Laidley Heights
-                              </Link>
-                            </h6>
-                            <Link href="#"></Link>
-                          </div>
-                          <Link href="#">{/* Client Content End */}</Link>
-                        </div>
-                        <Link href="#">{/* Single Client End */}</Link>
-                      </div>
-                      <Link href="#"></Link>
-                      <div className="swiper-slide">
-                        <Link href="#">{/* Single Client Start */}</Link>
-                        <div className="single-client-wrapper">
-                          <Link href="#">
-                            {/* Client Thumb Icon Start */}
-                            <div className="client-thumb-icon">
-                              <div className="thumb">
-                                <img
-                                  src="assets/images/home/review.png"
-                                  alt=""
-                                />
-                              </div>
-                            </div>
-                            {/* Client Thumb Icon End */}
-                            {/* Client Content Start */}
-                          </Link>
-                          <div className="client-content">
-                            <Link href="#">
-                              {/* Name End */}
-                              <p>
-                                We, the Hooper Taxation Services Pty Ltd, (Ken and
-                                Dionesia Goebel) would like to thank you “Oz Solar
-                                Needs” for your unbelievable, professional, honest,
-                                friendly and reliable service. You did an amazing
-                                job for our business and residential. What admire
-                                and amaze us the most is Jimmy’s unconditional
-                                helping hand and friendly advices.
-                              </p>
-                              {/* Name Start */}
-                            </Link>
-                            <h6 className="name">
-                              <Link href="#"></Link>
-                              <Link href="#">
-                                Ken and Dionesia Goebel | Laidley Heights
-                              </Link>
-                            </h6>
-                            <Link href="#"></Link>
-                          </div>
-                          <Link href="#">{/* Client Content End */}</Link>
-                        </div>
-                        <Link href="#">{/* Single Client End */}</Link>
-                      </div>
-                      <Link href="#"></Link>
-                      <div className="swiper-slide">
-                        <Link href="#">{/* Single Client Start */}</Link>
-                        <div className="single-client-wrapper">
-                          <Link href="#">
-                            {/* Client Thumb Icon Start */}
-                            <div className="client-thumb-icon">
-                              <div className="thumb">
-                                <img
-                                  src="assets/images/home/review.png"
-                                  alt=""
-                                />
-                              </div>
-                            </div>
-                            {/* Client Thumb Icon End */}
-                            {/* Client Content Start */}
-                          </Link>
-                          <div className="client-content">
-                            <Link href="#">
-                              {/* Name End */}
-                              <p>
-                                We, the Hooper Taxation Services Pty Ltd, (Ken and
-                                Dionesia Goebel) would like to thank you “Oz Solar
-                                Needs” for your unbelievable, professional, honest,
-                                friendly and reliable service. You did an amazing
-                                job for our business and residential. What admire
-                                and amaze us the most is Jimmy’s unconditional
-                                helping hand and friendly advices.
-                              </p>
-                              {/* Name Start */}
-                            </Link>
-                            <h6 className="name">
-                              <Link href="#"></Link>
-                              <Link href="#">
-                                Ken and Dionesia Goebel | Laidley Heights
-                              </Link>
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+        <section className="section" id="page5">
+          <div className="section review-section h-100">
+            <div className="container">
+              <div className="row">
+                <div className="col-12 position-relative">
+                  <div className="section-title client-title">
+                    <h2 className="title">Customer’s review</h2>
+                    <p className="mt-1">What they say about us</p>
                   </div>
-                  <Link href="#">
-                    {/* Swiper Pagination Start */}
-                    <div className="swiper-pagination d-none" />
-                    {/* Swiper Pagination End */}
-                    {/* Swiper Navigation Start */}
-                    <div className="client-crousel-prev swiper-button-prev">
-                      <i className="ion-ios-arrow-thin-left" />
-                    </div>
-                    <div className="client-crousel-next swiper-button-next">
-                      <i className="ion-ios-arrow-thin-right" />
-                    </div>
-                    {/* Swiper Navigation End */}
-                  </Link>
+                  <div className="client-crousel">
+                    <Slider {...settings}>
+                      {CustomerReviews &&
+                        CustomerReviews.map((data, index) => {
+                          return (
+                            <div className="p-2" key={index}>
+                              <div className="single-client-wrapper">
+                                <div className="client-thumb-icon">
+                                  <div className="thumb">
+                                    {renderStars(5, "red")}
+                                  </div>
+                                </div>
+                                <div className="client-content">
+                                  <p>{data.name}</p>
+                                  <h6 className="name">
+                                    <Link href="#">{data.text}</Link>
+                                  </h6>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                    </Slider>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <Footer />
+        </section>
         {/* End Main Footer */}
       </div>
       {/* Project Banner Section Start */}

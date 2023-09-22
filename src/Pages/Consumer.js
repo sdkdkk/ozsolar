@@ -5,30 +5,6 @@ import Footer from "../Components/Footer";
 const Consumer = () => {
     return (
         <>
-            {/* Project Banner Section Start */}
-            <div
-                className="section about-banner-image"
-                style={{ backgroundImage: "url(assets/images/gallery/large-gallery.jpg)" }}
-            >
-                <div className="container">
-                    <div className="row">
-                        <div className="content">
-                            <div>
-                                <h1 className="title">CEO Consumer</h1>
-                                <h5 className="text-white">
-                                    We would love to advice you on your solar needs.
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* Project Banner Section End */}
-
-
-
-
-            {/* about Section Start */}
             <div className="section section-padding-top">
                 <div className="container">
                     <div className="row d-flex align-items-center">
@@ -119,7 +95,6 @@ const Consumer = () => {
 
 
             {/* Main Footer */}
-            <Footer />
             {/* End Main Footer */}
 
 

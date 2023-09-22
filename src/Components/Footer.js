@@ -1,7 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({ data }) => {
+  let SocialMedia1 = data?.SocialMedia;
+  let document1 = data?.document ? data?.document : [];
+  const handleMenuItemClick = (link) => {
+    localStorage.setItem("activeLink", link);
+  };
+  console.log(document1);
+  const uniqueMap = new Map();
+  for (const item of document1) {
+    uniqueMap.set(item.name, item);
+  }
+  const uniqueData = Array.from(uniqueMap.values());
+  uniqueData.sort((a, b) => {
+    return a.sortOrder - b.sortOrder;
+  });
   return (
     <>
       <footer className="section1 overflow-hidden">
@@ -20,65 +34,98 @@ const Footer = () => {
             <div className="col-lg-3">
               <h4 className="footer-title">Quick Links</h4>
               <ul className="footer-nav">
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
-                <li>
-                  <Link to="/gallary">Gallery</Link>
-                </li>
-                <li>
-                  <Link to="/contact">Contact</Link>
-                </li>
-                <li>
-                  <Link to="/consumer">Consumer Guide</Link>
-                </li>
-                <li>
-                  <Link to="/inverter">Inverter</Link>
-                </li>
-                <li>
-                  <Link to="/panels">Panels</Link>
-                </li>
+                {uniqueData.map((el, i) => {
+                  if (el.product_id === undefined) {
+                    return (
+                      <li key={i}>
+                        {!el?.result?.length > 0 ? (
+                          <Link
+                            to={"/" + el.name}
+                            onClick={() => {
+                              handleMenuItemClick("/" + el.name);
+                            }}
+                          >
+                            {el.name}
+                          </Link>
+                        ) : (
+                          <Link
+                            onClick={() => {
+                              handleMenuItemClick("/" + el.name);
+                            }}
+                          >
+                            {el.name}
+                          </Link>
+                        )}
+                      </li>
+                    );
+                  }
+                })}
               </ul>
             </div>
             <div className="col-lg-3">
-              <h4 className="footer-title">Finance Options</h4>
+              <h4 className="footer-title">Product</h4>
               <ul className="footer-nav">
-                <li>
-                  <Link to="#">Humm</Link>
-                </li>
-                <li>
-                  <Link to="#"> Brighte</Link>
-                </li>
-                <li>
-                  <Link to="#">Zip Pay</Link>
-                </li>
+                {uniqueData.map((el, i) => {
+                  console.log(el);
+                  if (
+                    el.product_id !== undefined &&
+                    el.product_id !== "000000000000000000000000"
+                  ) {
+                    return (
+                      <li key={i}>
+                        {!el?.result?.length > 0 ? (
+                          <Link
+                            to={"/" + el.name}
+                            onClick={() => {
+                              handleMenuItemClick("/" + el.name);
+                            }}
+                          >
+                            {el.name}
+                          </Link>
+                        ) : (
+                          <Link
+                            onClick={() => {
+                              handleMenuItemClick("/" + el.name);
+                            }}
+                          >
+                            {el.name}
+                          </Link>
+                        )}
+                      </li>
+                    );
+                  }
+                })}
               </ul>
             </div>
             <div className="col-lg-3">
               <h4 className="footer-title">Follow Us</h4>
-              <ul className="footer-social-icons social-media-link">
-                <li>
-                  <Link
-                    to="https://www.facebook.com/OZSOLARNEEDS"
-                    className="icofont-facebook"
-                    target="_blank"
-                  />
-                </li>
-                <li>
-                  <Link
-                    to="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin%3Flang%3Den"
-                    className="icofont-twitter"
-                    target="_blank"
-                  />
-                </li>
-                <li>
-                  <Link
-                    to="https://api.whatsapp.com/send/?phone=61430305960&text&type=phone_number&app_absent=0"
-                    className="icofont-whatsapp"
-                    target="_blank"
-                  />
-                </li>
-              </ul>
+              {data?.SocialMedia && (
+                <ul className="footer-social-icons social-media-link">
+                  <li>
+                    <Link
+                      to={SocialMedia1[0]?.Facebook}
+                      // to="https://www.facebook.com/OZSOLARNEEDS"
+                      className="icofont-facebook"
+                      target="_blank"
+                    />
+                  </li>
+                  <li>
+                    <Link
+                      to={SocialMedia1[0]?.Twitter}
+                      // to="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin%3Flang%3Den"
+                      className="icofont-twitter"
+                      target="_blank"
+                    />
+                  </li>
+                  <li>
+                    <Link
+                      to="https://api.whatsapp.com/send/?phone=61430305960&text&type=phone_number&app_absent=0"
+                      className="icofont-whatsapp"
+                      target="_blank"
+                    />
+                  </li>
+                </ul>
+              )}
             </div>
           </div>
         </div>

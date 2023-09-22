@@ -1,17 +1,74 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.mesonry-list {
+  height: auto !important;
+}
+* {
+  font-family: "Montserrat", sans-serif;
+}
+.resizer {
+  display: none !important;
+}
+/* loader.scss */
 
-*{
-  font-family: 'Montserrat', sans-serif;
+.loader123 {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  /* animation: spin123 1s linear infinite; */
+}
+
+@keyframes spin123 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media only screen and (min-width: 280px) and (max-width: 768px) {
+  .about-banner-image {
+    align-items: end !important;
+    padding-bottom: 30%;
+  }
+  .content img {
+    width: 100px !important;
+  }
+  .title {
+    font-size: 30px !important;
+  }
+  .port-filter {
+    padding: 0px !important;
+    font-size: 14px;
+    font-weight: 500;
+    width: auto !important;
+  }
+}
+.slick-arrow {
+  display: none !important;
+}
+.inactive {
+  opacity: 0;
+}
+.active {
+  opacity: 1;
+}
+.right {
+  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.multi-spinner-container {
+  height: 100vh;
 }

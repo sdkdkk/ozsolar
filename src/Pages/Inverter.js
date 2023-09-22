@@ -2,57 +2,9 @@ import React from "react";
 import ScrollToTop from "../Components/ScrollToTop";
 import Footer from "../Components/Footer";
 
-const Inverter = () => {
+const Inverter = ({productscontent}) => {
     return (
         <>
-            {/* Project Banner Section Start */}
-            <div
-                className="section about-banner-image"
-                style={{ backgroundImage: "url(assets/images/inverter/banner.jpg)" }}
-            >
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="content">
-                            <div>
-                                <img className="panel-logo" src="assets/images/inverter/logo.png" alt="" />
-                                <h1 className="title">Growatt</h1>
-                                <h5 className="text-white">
-                                    Oz Solar Needs exist to happily serve our community
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                    {/* banner button Content Start */}
-                    <div className="row mt-n2">
-                        <div className="messonry-button-w">
-                            <div className="messonry-button">
-                                <a href="/" className="is-checked port-filter">
-                                    Growatt
-                                </a>
-                                <a href="/" className="port-filter">
-                                    Fronius
-                                </a>
-                                <a href="/" className="port-filter">
-                                    ABB
-                                </a>
-                                <a href="/" className="port-filter">
-                                    SMA
-                                </a>
-                                <a href="/" className="port-filter">
-                                    Sungrow
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    {/* banner button Content End */}
-                </div>
-            </div>
-            {/* Project Banner Section End */}
-
-
-
-
-            {/* inverter Section Start */}
             <div className="section">
                 <div className="container-full">
                     <div className="row d-flex align-items-center">
@@ -347,7 +299,6 @@ const Inverter = () => {
 
 
             {/* Main Footer */}
-            <Footer />
             {/* End Main Footer */}
 
 
