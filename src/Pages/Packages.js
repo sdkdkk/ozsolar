@@ -28,7 +28,7 @@ const Packages = () => {
     };
 
     let reqOptions = {
-      url: "http://localhost:5000/api/admin/packageall",
+      url: `${process.env.REACT_APP_API_BASE_URL}api/admin/packageall`,
       method: "GET",
       headers: headersList,
     };
@@ -89,7 +89,7 @@ const Packages = () => {
         };
 
         let reqOptions = {
-          url: "http://localhost:5000/api/packagescontroller",
+          url: `${process.env.REACT_APP_API_BASE_URL}api/packagescontroller`,
           method: "POST",
           data: bodyContent,
         };

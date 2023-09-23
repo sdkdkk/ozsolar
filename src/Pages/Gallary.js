@@ -23,7 +23,7 @@ const GalleryComponent = ({ gallerytype }) => {
 
   const getdata = async () => {
     let reqOptions = {
-      url: "http://localhost:5000/api/admin/galleryImageall",
+      url: `${process.env.REACT_APP_API_BASE_URL}api/admin/galleryImageall`,
       method: "GET",
     };
 

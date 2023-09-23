@@ -29,7 +29,7 @@ const Home = ({ banars, data }) => {
   }, []);
   const getCustomer = async () => {
     let reqOptions = {
-      url: "http://localhost:5000/api/admin/testimonialall",
+      url: `${process.env.REACT_APP_API_BASE_URL}api/admin/testimonialall`,
       method: "GET",
     };
 
@@ -38,7 +38,7 @@ const Home = ({ banars, data }) => {
   };
   const getBRAND = async () => {
     let reqOptions = {
-      url: "http://localhost:5000/api/admin/brandall",
+      url: `${process.env.REACT_APP_API_BASE_URL}api/admin/brandall`,
       method: "GET",
     };
 
@@ -92,7 +92,7 @@ const Home = ({ banars, data }) => {
         };
 
         let reqOptions = {
-          url: "http://localhost:5000/api/contactinquary",
+          url: `${process.env.REACT_APP_API_BASE_URL}api/contactinquary`,
           method: "POST",
           data: bodyContent,
         };
@@ -108,22 +108,6 @@ const Home = ({ banars, data }) => {
       }
     },
   });
-  const handalchange = (e) => {
-    const { name, value, checked, files } = e.target;
-    if (name !== "MobileBannerImage") {
-      if (name !== "BannerImage") {
-        if (name === "isActive") {
-          setdata({ ...data, [name]: checked });
-        } else {
-          setdata({ ...data, [name]: value });
-        }
-      } else {
-        setdata({ ...data, [name]: files[0] });
-      }
-    } else {
-      setdata({ ...data, [name]: files[0] });
-    }
-  };
   useEffect(() => {
     new Swiper(".swiper-container", {
       slidesPerView: 1,
@@ -928,7 +912,7 @@ const Home = ({ banars, data }) => {
                             target="_blank"
                             href="mailto:sales@ozsolarneeds.com.au"
                           >
-                         {data?.length > 0 ? data[0]?.Email : null}
+                            {data?.length > 0 ? data[0]?.Email : null}
                           </Link>
                         </p>
                       </div>

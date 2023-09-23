@@ -52,7 +52,7 @@ const Contact = () => {
         };
 
         let reqOptions = {
-          url: "http://localhost:5000/api/contactinquary",
+          url: `${process.env.REACT_APP_API_BASE_URL}api/contactinquary`,
           method: "POST",
           data: bodyContent,
         };

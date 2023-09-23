@@ -8,7 +8,6 @@ const Navbar = ({ setavtivedata, setavtivemenu }) => {
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const handleMobileMenuToggle = () => setMobileMenuOpen(!isMobileMenuOpen);
-  console.log(location);
   useEffect(() => {
     const storedActiveLink = localStorage.getItem("activeLink");
     setActiveLink(storedActiveLink || location.pathname);
@@ -38,7 +37,7 @@ const Navbar = ({ setavtivedata, setavtivemenu }) => {
       };
 
       let reqOptions = {
-        url: "http://localhost:5000/api/admin/cmsall",
+        url: `${process.env.REACT_APP_API_BASE_URL}api/admin/cmsall`,
         method: "GET",
         headers: headersList,
       };

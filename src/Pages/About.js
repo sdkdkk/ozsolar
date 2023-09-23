@@ -25,7 +25,7 @@ const About = ({ banars }) => {
   }, []);
   const getCustomer = async () => {
     let reqOptions = {
-      url: "http://localhost:5000/api/admin/testimonialall",
+      url: `${process.env.REACT_APP_API_BASE_URL}api/admin/testimonialall`,
       method: "GET",
     };
 
